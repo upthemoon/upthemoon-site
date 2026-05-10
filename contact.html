@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Up the Moon LLC</title>
+<meta name="description" content="Up the Moon合同会社へのお問い合わせ・お仕事のご相談はこちらから。撮影・Web・アプリ・ドローン・コンサル・事務代行のご依頼を承ります。">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="/" class="brand"><img src="assets/logo_128.png" alt="Up the Moon"><span>Up the Moon</span></a>
+    <button class="nav-toggle" aria-label="menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">≡</button>
+    <div class="nav-links">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="products.html">Products</a>
+      <a href="company.html">Company</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="en">Contact</div>
+  <h1>お問い合わせ</h1>
+</section>
+
+<section class="block">
+  <p class="section-lead text-center" style="margin: 0 auto 56px;">
+    お仕事のご相談・取材・採用・その他お問い合わせは、<br>
+    下記フォーム または メールにて承ります。<br>
+    通常24時間以内にご返信いたします。
+  </p>
+
+  <form class="form-section" action="https://formspree.io/f/xwvywkpw" method="POST">
+    <label for="name">お名前 / 会社名 <span style="color:var(--gold);">*</span></label>
+    <input type="text" name="name" id="name" required>
+
+    <label for="email">メールアドレス <span style="color:var(--gold);">*</span></label>
+    <input type="email" name="email" id="email" required>
+
+    <label for="category">ご用件</label>
+    <input type="text" name="category" id="category" placeholder="撮影 / Web / アプリ / ドローン / コンサル / 事務代行 / その他">
+
+    <label for="message">お問い合わせ内容 <span style="color:var(--gold);">*</span></label>
+    <textarea name="message" id="message" required placeholder="ご要望・ご予算・希望時期などをお聞かせください"></textarea>
+
+    <input type="hidden" name="_subject" value="【Up the Moon】Webサイトからのお問い合わせ">
+
+    <div class="text-center">
+      <button type="submit">送信する</button>
+    </div>
+  </form>
+
+  <div style="text-align: center; margin-top: 80px; padding-top: 56px; border-top: 1px solid var(--gray-200);">
+    <div class="section-label">Direct Email</div>
+    <p style="font-family: var(--serif-jp); font-size: 20px; letter-spacing: 0.04em; margin-top: 8px;">
+      <a href="mailto:roygraphy@first-shutter.com">roygraphy@first-shutter.com</a>
+    </p>
+    <p style="color: var(--gray-400); font-size: 12px; margin-top: 12px; letter-spacing: 0.06em;">
+      24時間以内にご返信
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="assets/logo_128.png" alt="Up the Moon">
+      <div class="name">Up the Moon LLC</div>
+      <small>合同会社アップ・ザ・ムーン<br>愛知県愛知郡東郷町</small>
+    </div>
+    <div class="footer-links">
+      <div>
+        <h5>Site</h5>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="company.html">Company</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Products</h5>
+        <ul>
+          <li><a href="https://roygraphy-web.github.io/hitorinku-lp/" target="_blank" rel="noopener">Hitorinku</a></li>
+          <li><a href="https://upthemoon.booth.pm/" target="_blank" rel="noopener">BOOTH</a></li>
+          <li><a href="https://note.com/up_the_moon" target="_blank" rel="noopener">note</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="tokushoho.html">特定商取引法</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Up the Moon LLC. All rights reserved.</span>
+    <span>法人番号 3180003025866</span>
+  </div>
+</footer>
+
+</body>
+</html>

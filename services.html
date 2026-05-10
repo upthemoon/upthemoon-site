@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services | Up the Moon LLC</title>
+<meta name="description" content="Up the Moon合同会社のサービス一覧。撮影・Web制作・アプリ開発・ドローン撮影・コンサル・事務経理代行。中部圏を中心にお引き受けいたします。">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+.svc-detail {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 64px;
+  padding: 80px 0;
+  border-bottom: 1px solid var(--gray-200);
+  align-items: start;
+}
+.svc-detail:last-child { border-bottom: 0; }
+@media (max-width: 768px) {
+  .svc-detail { grid-template-columns: 1fr; gap: 24px; }
+}
+.svc-detail .num-large {
+  font-family: var(--sans);
+  font-size: 96px;
+  font-weight: 200;
+  color: var(--gold);
+  line-height: 1;
+}
+.svc-detail h2 {
+  font-family: var(--serif-jp);
+  font-weight: 500;
+  font-size: 28px;
+  margin-bottom: 8px;
+  letter-spacing: 0.04em;
+}
+.svc-detail .en {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: var(--gray-400);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.svc-detail p {
+  color: var(--gray-600);
+  margin-bottom: 16px;
+  line-height: 1.95;
+  font-size: 14px;
+}
+.svc-detail ul {
+  margin-top: 16px;
+  list-style: none;
+  padding: 0;
+}
+.svc-detail ul li {
+  font-size: 13px;
+  padding-left: 16px;
+  position: relative;
+  margin-bottom: 8px;
+  color: var(--gray-600);
+}
+.svc-detail ul li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="/" class="brand"><img src="assets/logo_128.png" alt="Up the Moon"><span>Up the Moon</span></a>
+    <button class="nav-toggle" aria-label="menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">≡</button>
+    <div class="nav-links">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="products.html">Products</a>
+      <a href="company.html">Company</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="en">Services</div>
+  <h1>サービス</h1>
+</section>
+
+<section class="block">
+  <p class="section-lead text-center" style="margin: 0 auto 0;">
+    すべてのサービスは、お客様のご要望を丁寧にヒアリングした上で<br>
+    お見積もり・進行をご提案します。複数領域の組み合わせも可能です。
+  </p>
+
+  <div class="svc-detail">
+    <div class="num-large">01</div>
+    <div>
+      <h2>撮影</h2>
+      <div class="en">Photography</div>
+      <p>
+        ウェディング・家族・記念日・ポートレート・商業撮影まで。<br>
+        その場に流れる空気、人の微細な表情、光の質感を、丁寧に切り取ります。
+      </p>
+      <ul>
+        <li>ウェディング撮影（挙式・披露宴・前撮り）</li>
+        <li>家族写真・マタニティ・お宮参り</li>
+        <li>ポートレート・宣材・プロフィール</li>
+        <li>商業撮影（店舗・商品・料理）</li>
+        <li>イベント記録・取材撮影</li>
+      </ul>
+      <p style="margin-top: 24px; font-size: 12px; color: var(--gray-400);">
+        ブランド: <a href="https://www.frist-shutter.com/" target="_blank" rel="noopener" style="color:var(--gold);">First Shutter</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="svc-detail">
+    <div class="num-large">02</div>
+    <div>
+      <h2>Web制作</h2>
+      <div class="en">Web Development</div>
+      <p>
+        コーポレートサイト、LP、ポートフォリオ、簡易ECまで。<br>
+        デザインからコーディング、SEO、運用までワンストップで対応します。
+      </p>
+      <ul>
+        <li>コーポレートサイト・サービスサイト</li>
+        <li>ランディングページ（LP）</li>
+        <li>個人事業主・士業向けの小規模サイト</li>
+        <li>既存サイトのリニューアル・移管</li>
+        <li>WordPress / 静的サイト（Astro等）両対応</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="svc-detail">
+    <div class="num-large">03</div>
+    <div>
+      <h2>アプリ開発</h2>
+      <div class="en">Mobile App Development</div>
+      <p>
+        iOS / Android のモバイルアプリを企画・設計・開発・公開・運用までトータルでサポート。<br>
+        自社アプリの開発・運営実績があるからこそ提案できる「使われるアプリ」を。
+      </p>
+      <ul>
+        <li>iOS / Android（React Native / Expo）</li>
+        <li>App Store / Google Play 申請代行</li>
+        <li>サブスクリプション・アプリ内課金（RevenueCat）</li>
+        <li>クラウド連携（Supabase / Firebase）</li>
+        <li>既存アプリの保守・改修</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="svc-detail">
+    <div class="num-large">04</div>
+    <div>
+      <h2>ドローン撮影</h2>
+      <div class="en">Aerial Photography</div>
+      <p>
+        国土交通省への飛行許可・承認を取得済み。<br>
+        建設現場の進捗記録から、空撮プロモーション映像まで対応します。
+      </p>
+      <ul>
+        <li>建設・土木現場の空撮（進捗記録）</li>
+        <li>不動産物件の俯瞰撮影</li>
+        <li>イベント・式典の空撮</li>
+        <li>プロモーション映像の制作</li>
+        <li>飛行計画書・申請の代行（個別案件）</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="svc-detail">
+    <div class="num-large">05</div>
+    <div>
+      <h2>コンサル</h2>
+      <div class="en">Consulting</div>
+      <p>
+        建設業・写真業・小規模事業者向けに、業務効率化・DX化のコンサルティング。<br>
+        ツール導入だけでなく、運用が定着するまで伴走します。
+      </p>
+      <ul>
+        <li>業務フローの可視化・効率化提案</li>
+        <li>SaaSツール選定・導入支援</li>
+        <li>労務・出勤管理のデジタル化</li>
+        <li>クラウド会計・給与計算の整備</li>
+        <li>個人事業主向け法人化サポート</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="svc-detail">
+    <div class="num-large">06</div>
+    <div>
+      <h2>事務経理代行</h2>
+      <div class="en">Back-office Support</div>
+      <p>
+        日々の経理処理・書類作成・労務関連の事務作業を代行します。<br>
+        本業に集中したい方の「目に見えない仕事」を引き受けます。
+      </p>
+      <ul>
+        <li>記帳代行・月次決算サポート</li>
+        <li>請求書・見積書発行</li>
+        <li>労働条件通知書・賃金台帳・給与明細の作成</li>
+        <li>各種申請書類の作成サポート</li>
+        <li>クラウド会計（freee / 弥生）入力代行</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>サービスのご相談・お見積もりはこちらから。</h2>
+  <a href="contact.html" class="btn">Contact Us</a>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="assets/logo_128.png" alt="Up the Moon">
+      <div class="name">Up the Moon LLC</div>
+      <small>合同会社アップ・ザ・ムーン<br>愛知県愛知郡東郷町</small>
+    </div>
+    <div class="footer-links">
+      <div>
+        <h5>Site</h5>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="company.html">Company</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Products</h5>
+        <ul>
+          <li><a href="https://roygraphy-web.github.io/hitorinku-lp/" target="_blank" rel="noopener">Hitorinku</a></li>
+          <li><a href="https://upthemoon.booth.pm/" target="_blank" rel="noopener">BOOTH</a></li>
+          <li><a href="https://note.com/up_the_moon" target="_blank" rel="noopener">note</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="tokushoho.html">特定商取引法</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Up the Moon LLC. All rights reserved.</span>
+    <span>法人番号 3180003025866</span>
+  </div>
+</footer>
+
+</body>
+</html>
