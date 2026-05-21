@@ -115,4 +115,34 @@
 
   // Touch devices: gentle gyro tilt fallback (optional・defensive・only if permitted)
   // — kept minimal to avoid permission prompts; tilt is desktop-only feature.
+
+  // ── Hamburger menu UX (outside click / ESC / aria-expanded) ──
+  var navToggle = document.querySelector('.nav-toggle');
+  var navLinks = document.querySelector('.nav-links');
+  if (navToggle && navLinks) {
+    var setOpen = function(open) {
+      navLinks.classList.toggle('open', open);
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    };
+    navToggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var isOpen = navLinks.classList.contains('open');
+      setOpen(!isOpen);
+    });
+    document.addEventListener('click', function(e) {
+      if (!navLinks.classList.contains('open')) return;
+      if (navLinks.contains(e.target) || navToggle.contains(e.target)) return;
+      setOpen(false);
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && navLinks.classList.contains('open')) {
+        setOpen(false);
+        navToggle.focus();
+      }
+    });
+    // Close on internal link click (anchor navigation)
+    navLinks.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function() { setOpen(false); });
+    });
+  }
 })();
