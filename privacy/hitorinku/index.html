@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../../assets/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../assets/apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hitorinku プライバシーポリシー | Up the Moon LLC</title>
+<meta name="description" content="Hitorinku (ヒトリンク) 建設業向け出勤管理アプリのプライバシーポリシー。出勤データ・採用企業情報・PostHog 行動分析の取り扱いについて。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="/" class="brand"><img src="../../assets/logo_light_128.png" alt="Up the Moon"><span>Up the Moon</span></a>
+    <button class="nav-toggle" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="primary-nav">≡</button>
+    <div class="nav-links" id="primary-nav">
+      <a href="../../about.html">About</a>
+      <a href="../../services.html">Services</a>
+      <a href="../../products.html">Products</a>
+      <a href="../../company.html">Company</a>
+      <a href="../../contact.html">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="en">Hitorinku Privacy Policy</div>
+  <h1>Hitorinku プライバシーポリシー</h1>
+</section>
+
+<section class="block">
+  <article class="article">
+    <p>Up the Moon合同会社（以下「当社」）は、iOS アプリ「Hitorinku / ヒトリンク」（以下「本アプリ」）におけるお客様の情報を、以下の方針に基づき適切に取り扱います。本アプリは建設業向けの toB SaaS であり、採用企業（雇用主）と作業者（従業員）の両方のデータを取り扱います。</p>
+
+    <h2>第1条（収集する情報）</h2>
+    <p>本アプリは以下の情報を取り扱います。</p>
+    <ul>
+      <li><strong>出勤データ</strong>（出勤日時・退勤日時・現場名・作業内容）— ローカル SQLite + Supabase（後述）に保存。</li>
+      <li><strong>作業者情報</strong>（採用企業が登録した作業者名・社員番号・PIN）— Supabase に保存。氏名はフルネーム表示せずニックネーム推奨。</li>
+      <li><strong>採用企業情報</strong>（法人名・組織コード・連絡先）— Supabase に保存。</li>
+      <li><strong>人工（にんく）データ</strong>（1.0 / 0.5 / 1.5 等の人工単位・単価・金額）— Supabase に保存。</li>
+      <li><strong>端末情報</strong>（iOS バージョン・アプリバージョン・端末モデル）— 行動分析および不具合対応のため。</li>
+      <li><strong>アプリ操作ログ</strong>（打刻回数・現場切替回数）— 匿名識別子（UUID）と紐づけて行動分析ツールに送信。</li>
+      <li><strong>お問い合わせ内容</strong>（任意のメールアドレス・本文）— アプリ内お問い合わせ機能使用時のみ。</li>
+    </ul>
+
+    <h2>第2条（PIN 認証・生体認証）</h2>
+    <p>本アプリは作業者の個別認証に <strong>4桁 PIN コード</strong>を使用します。PIN は端末ローカルに salt + ハッシュ化（expo-secure-store）で保存され、平文では一切保存されません。Face ID / Touch ID もバックアップ認証として利用可能です（任意）。</p>
+    <p>PIN は当社サーバーには送信されません。万一忘れた場合は、採用企業の管理者が再発行する仕組みです。</p>
+
+    <h2>第3条（利用目的）</h2>
+    <ul>
+      <li>本アプリの機能提供（出勤打刻・人工集計・CSV エクスポート）</li>
+      <li>採用企業の労務管理業務支援</li>
+      <li>不具合対応・カスタマーサポート</li>
+      <li>利用状況の分析・サービス改善（採用企業別の機能利用率分析）</li>
+      <li>法令に基づく対応（労務関連法令の遵守支援）</li>
+    </ul>
+
+    <h2>第4条（第三者への提供）</h2>
+    <p>当社は、お客様の事前同意を得ずに個人情報を第三者に提供しません。ただし、以下の場合は除きます。</p>
+    <ul>
+      <li>法令に基づく場合</li>
+      <li>人の生命・身体・財産の保護のために必要な場合</li>
+      <li>業務委託先に必要な範囲で提供する場合（下記「外部サービス」参照）</li>
+      <li>採用企業の管理者が、自社の作業者の出勤データを閲覧する場合（雇用主・労務管理上の正当な目的）</li>
+    </ul>
+
+    <h2>第5条（外部サービスの利用）</h2>
+    <p>本アプリは以下の外部サービスを利用しています。各サービスのプライバシーポリシーも併せてご確認ください。</p>
+    <ul>
+      <li><strong>Supabase Inc.</strong>（データ保存・認証）— 出勤データ・作業者情報・採用企業情報の保存先。AWS 東京リージョン。Row Level Security により採用企業をまたぐデータアクセスは厳格に制御されます。<a href="https://supabase.com/privacy" target="_blank" rel="noopener" style="color:var(--gold);">Supabase Privacy Policy</a></li>
+      <li><strong>PostHog Inc.</strong>（行動分析・EU リージョン）— 匿名 distinctId（UUID）+ 端末情報 + 操作ログを送信。<a href="https://posthog.com/privacy" target="_blank" rel="noopener" style="color:var(--gold);">PostHog Privacy Policy</a></li>
+      <li><strong>RevenueCat, Inc.</strong>（課金管理）— Apple App Store のレシート情報を経由して管理。<a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener" style="color:var(--gold);">RevenueCat Privacy Policy</a></li>
+      <li><strong>Apple Inc.</strong>（App Store 配信・課金）— アプリの配信およびアプリ内課金は Apple のシステムを使用します。<a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener" style="color:var(--gold);">Apple Privacy Policy</a></li>
+    </ul>
+
+    <h2>第6条（行動分析の opt-out）</h2>
+    <p>本アプリの行動分析機能は、初期設定では <strong>「ON」</strong> となっています。本アプリ「設定」画面の「使用状況の分析を許可する」スイッチで <strong>いつでも OFF にできます</strong>。OFF にすると、それ以降のデータは PostHog に送信されません。</p>
+    <p>分析に使用される識別子は匿名 UUID であり、作業者の氏名・社員番号・PIN とは紐づきません。IP アドレスは PostHog 側で匿名化されます。</p>
+
+    <h2>第7条（採用企業の管理権限）</h2>
+    <p>採用企業の管理者は、自社に所属する作業者の出勤データを閲覧・編集・削除できます。これは雇用主が労務管理上必要とする権限であり、本アプリの設計上の前提です。</p>
+    <p>採用企業の管理者は、所属する作業者に対してアプリ内のレビュー要求機能などを <strong>無効化する設定</strong>を行うことができます。</p>
+
+    <h2>第8条（データの保存期間）</h2>
+    <ul>
+      <li>出勤データ・人工データ（Supabase）— 採用企業との契約終了またはアカウント削除後 90日以内に完全削除</li>
+      <li>労働基準法に基づき、出勤データは <strong>5年間（経過措置中は3年間）の保存義務</strong>があります。当社は採用企業がこの義務を果たせるよう、契約期間中は保存を継続します。</li>
+      <li>行動分析データ（PostHog）— 2年間（PostHog 側のデフォルト保存期間）</li>
+      <li>お問い合わせ履歴 — 受信から3年間</li>
+    </ul>
+
+    <h2>第9条（個人情報の開示・訂正・削除）</h2>
+    <p>作業者ご本人からの自己の出勤データの開示・訂正・削除のご請求は、まず採用企業の管理者にご相談ください。採用企業の管理者が対応できない場合、または採用企業をまたぐ問題がある場合は、お問い合わせ窓口までご連絡ください。</p>
+
+    <h2>第10条（GDPR・CCPA への対応）</h2>
+    <p>本アプリは主に日本国内の建設業向けに提供していますが、欧州経済領域（EEA）・英国・カリフォルニア州にお住まいの作業者には、GDPR・CCPA に基づく権利（データへのアクセス・訂正・削除・処理の制限・データポータビリティ等）が認められます。これらの権利行使については、お問い合わせ窓口までご連絡ください。</p>
+
+    <h2>第11条（13歳未満のユーザーについて）</h2>
+    <p>本アプリは <strong>建設業向けの toB アプリであり、13歳未満のお子様による利用を想定していません</strong>。労働基準法により、建設業では18歳未満の労働は原則禁止されています。</p>
+
+    <h2>第12条（お問い合わせ窓口）</h2>
+    <p>
+      Up the Moon合同会社<br>
+      〒470-0162 愛知県愛知郡東郷町大字春木字太子30番地 センチュリー太子別棟店舗2B<br>
+      お問い合わせ: <a href="../../contact.html" style="color:var(--gold);">お問い合わせフォーム</a> / <a href="mailto:support@upthemoon.co.jp" style="color:var(--gold);">support@upthemoon.co.jp</a>
+    </p>
+
+    <h2>第13条（改定）</h2>
+    <p>当社は必要に応じて本ポリシーを改定することがあります。重要な変更がある場合は、本アプリ起動時および採用企業の管理者宛メールで通知します。改定後の内容は本ページにて公表します。</p>
+
+    <hr>
+    <p style="text-align: right; color: var(--gray-400); font-size: 13px;">
+      最終更新: 2026年5月28日<br>
+      アプリバージョン: v1.0 以降<br>
+      Up the Moon合同会社
+    </p>
+  </article>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="../../assets/logo_light_128.png" alt="Up the Moon">
+      <div class="name">Up the Moon LLC</div>
+      <small>Up the Moon合同会社<br>愛知県愛知郡東郷町</small>
+    </div>
+    <div class="footer-links">
+      <div>
+        <h5>Site</h5>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="../../about.html">About</a></li>
+          <li><a href="../../products.html">Products</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="../../privacy.html">プライバシーポリシー (法人)</a></li>
+          <li><a href="/privacy/">アプリ別ポリシー</a></li>
+          <li><a href="../../tokushoho.html">特定商取引法表記</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <small>© Up the Moon LLC</small>
+  </div>
+</footer>
+
+</body>
+</html>

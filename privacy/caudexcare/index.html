@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../../assets/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../assets/apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CaudexCare プライバシーポリシー | Up the Moon LLC</title>
+<meta name="description" content="CaudexCare アプリのプライバシーポリシー。植物データの Supabase 保存、PostHog 行動分析、データ保存期間について。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="/" class="brand"><img src="../../assets/logo_light_128.png" alt="Up the Moon"><span>Up the Moon</span></a>
+    <button class="nav-toggle" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="primary-nav">≡</button>
+    <div class="nav-links" id="primary-nav">
+      <a href="../../about.html">About</a>
+      <a href="../../services.html">Services</a>
+      <a href="../../products.html">Products</a>
+      <a href="../../company.html">Company</a>
+      <a href="../../contact.html">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="en">CaudexCare Privacy Policy</div>
+  <h1>CaudexCare プライバシーポリシー</h1>
+</section>
+
+<section class="block">
+  <article class="article">
+    <p>Up the Moon合同会社（以下「当社」）は、iOS アプリ「CaudexCare」（以下「本アプリ」）におけるお客様の情報を、以下の方針に基づき適切に取り扱います。</p>
+
+    <h2>第1条（収集する情報）</h2>
+    <p>本アプリは以下の情報を取り扱います。</p>
+    <ul>
+      <li><strong>植物コレクションデータ</strong>（種別・登録日・水やり履歴・観察ノート・写真）— Supabase（後述）に保存。</li>
+      <li><strong>端末情報</strong>（iOS バージョン・アプリバージョン・端末モデル）— 行動分析および不具合対応のため。</li>
+      <li><strong>アプリ操作ログ</strong>（画面遷移・機能使用回数・登録植物数）— 匿名識別子（UUID）と紐づけて行動分析ツールに送信。</li>
+      <li><strong>課金状態</strong>（Pro プラン加入有無）— RevenueCat 経由で管理（v1.4 以降）。</li>
+      <li><strong>お問い合わせ内容</strong>（任意のメールアドレス・本文）— アプリ内お問い合わせ機能使用時のみ。</li>
+    </ul>
+    <p>本アプリは <strong>ユーザーの氏名・住所・電話番号などの個人識別情報は取得しません</strong>。Supabase 認証は匿名認証（anonymous sign-in）を使用し、メールアドレス・パスワード登録は不要です。</p>
+
+    <h2>第2条（植物写真・位置情報の取り扱い）</h2>
+    <p>本アプリは写真の <strong>EXIF メタデータ（GPS 位置情報・撮影機種等）を読み取り時に明示的に除去</strong>します。希少植物の所在地が漏れる事故を防ぐためです。</p>
+    <p>写真は Supabase Storage に保存され、お客様のみが閲覧可能です（Row Level Security により厳格に制御）。第三者には開示されません。</p>
+
+    <h2>第3条（利用目的）</h2>
+    <ul>
+      <li>本アプリの機能提供（植物コレクション管理・水やりリマインダー・天気連動ケアアドバイス）</li>
+      <li>不具合対応・カスタマーサポート</li>
+      <li>利用状況の分析・サービス改善</li>
+      <li>課金状態の管理（v1.4 以降の Pro プラン）</li>
+      <li>法令に基づく対応</li>
+    </ul>
+
+    <h2>第4条（第三者への提供）</h2>
+    <p>当社は、お客様の事前同意を得ずに個人情報を第三者に提供しません。ただし、以下の場合は除きます。</p>
+    <ul>
+      <li>法令に基づく場合</li>
+      <li>人の生命・身体・財産の保護のために必要な場合</li>
+      <li>業務委託先に必要な範囲で提供する場合（下記「外部サービス」参照）</li>
+    </ul>
+
+    <h2>第5条（外部サービスの利用）</h2>
+    <p>本アプリは以下の外部サービスを利用しています。各サービスのプライバシーポリシーも併せてご確認ください。</p>
+    <ul>
+      <li><strong>Supabase Inc.</strong>（データ保存・認証）— 植物コレクションデータの保存先。AWS 東京リージョン。<a href="https://supabase.com/privacy" target="_blank" rel="noopener" style="color:var(--gold);">Supabase Privacy Policy</a></li>
+      <li><strong>PostHog Inc.</strong>（行動分析・EU リージョン）— 匿名 distinctId（UUID）+ 端末情報 + 操作ログを送信。<a href="https://posthog.com/privacy" target="_blank" rel="noopener" style="color:var(--gold);">PostHog Privacy Policy</a></li>
+      <li><strong>RevenueCat, Inc.</strong>（課金管理・v1.4 以降）— Apple App Store のレシート情報を経由して管理。<a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener" style="color:var(--gold);">RevenueCat Privacy Policy</a></li>
+      <li><strong>Apple Inc.</strong>（App Store 配信・課金・WeatherKit）— アプリの配信、アプリ内課金、天気情報の取得に Apple のシステムを使用します。<a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener" style="color:var(--gold);">Apple Privacy Policy</a></li>
+    </ul>
+
+    <h2>第6条（行動分析の opt-out）</h2>
+    <p>本アプリの行動分析機能は、初期設定では <strong>「ON」</strong> となっています。本アプリ「設定」画面の「使用状況の分析を許可する」スイッチで <strong>いつでも OFF にできます</strong>。OFF にすると、それ以降のデータは PostHog に送信されません。</p>
+    <p>分析に使用される識別子は匿名 UUID であり、お客様の氏名・メールアドレス・端末固有 ID（IDFA 等）とは紐づきません。IP アドレスは PostHog 側で匿名化されます。</p>
+
+    <h2>第7条（データの保存期間）</h2>
+    <ul>
+      <li>植物コレクションデータ（Supabase）— アカウント削除またはアンインストール後 30日以内に完全削除</li>
+      <li>行動分析データ（PostHog）— 2年間（PostHog 側のデフォルト保存期間）</li>
+      <li>お問い合わせ履歴 — 受信から3年間</li>
+    </ul>
+
+    <h2>第8条（個人情報の開示・訂正・削除）</h2>
+    <p>植物コレクションデータの全削除をご希望の場合は、本アプリ「設定」画面の「アカウント削除」、またはお問い合わせ窓口からご連絡ください。本人確認の上、合理的な期間内に対応いたします。</p>
+
+    <h2>第9条（GDPR・CCPA への対応）</h2>
+    <p>欧州経済領域（EEA）・英国・カリフォルニア州にお住まいのお客様には、GDPR・CCPA に基づく権利（データへのアクセス・訂正・削除・処理の制限・データポータビリティ等）が認められます。これらの権利行使については、お問い合わせ窓口までご連絡ください。</p>
+    <p>本アプリの行動分析データは、PostHog Inc. の EU リージョンサーバー（オランダ・アイルランド）に保存されます。植物コレクションデータは Supabase の東京リージョンに保存されます。</p>
+
+    <h2>第10条（13歳未満のユーザーについて）</h2>
+    <p>本アプリは <strong>13歳未満のお子様による利用を想定していません</strong>。本アプリは App Store のレーティング「4+」ですが、Apple Kids Category には分類されておらず、子供向けに設計・販売されているものではありません。</p>
+
+    <h2>第11条（お問い合わせ窓口）</h2>
+    <p>
+      Up the Moon合同会社<br>
+      〒470-0162 愛知県愛知郡東郷町大字春木字太子30番地 センチュリー太子別棟店舗2B<br>
+      お問い合わせ: <a href="../../contact.html" style="color:var(--gold);">お問い合わせフォーム</a> / <a href="mailto:support@upthemoon.co.jp" style="color:var(--gold);">support@upthemoon.co.jp</a>
+    </p>
+
+    <h2>第12条（改定）</h2>
+    <p>当社は必要に応じて本ポリシーを改定することがあります。重要な変更がある場合は、本アプリ起動時に通知します。改定後の内容は本ページにて公表します。</p>
+
+    <hr>
+    <p style="text-align: right; color: var(--gray-400); font-size: 13px;">
+      最終更新: 2026年5月28日<br>
+      アプリバージョン: v1.2 以降<br>
+      Up the Moon合同会社
+    </p>
+  </article>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="../../assets/logo_light_128.png" alt="Up the Moon">
+      <div class="name">Up the Moon LLC</div>
+      <small>Up the Moon合同会社<br>愛知県愛知郡東郷町</small>
+    </div>
+    <div class="footer-links">
+      <div>
+        <h5>Site</h5>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="../../about.html">About</a></li>
+          <li><a href="../../products.html">Products</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="../../privacy.html">プライバシーポリシー (法人)</a></li>
+          <li><a href="/privacy/">アプリ別ポリシー</a></li>
+          <li><a href="../../tokushoho.html">特定商取引法表記</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <small>© Up the Moon LLC</small>
+  </div>
+</footer>
+
+</body>
+</html>
