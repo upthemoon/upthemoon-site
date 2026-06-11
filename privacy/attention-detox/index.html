@@ -13,6 +13,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../assets/style.css">
+<style>
+  /* この PP ページはカスタムカーソル JS (main.js) を読み込まないため、
+     style.css の body{cursor:none} を打ち消して標準カーソルを表示する。 */
+  @media (hover: hover) and (pointer: fine) {
+    body, a, button, [role="button"], input, textarea, select, label { cursor: auto; }
+    a, button, [role="button"], .nav-toggle { cursor: pointer; }
+  }
+</style>
 </head>
 <body>
 
