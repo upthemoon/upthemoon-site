@@ -12,8 +12,24 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../assets/style.css">
+<noscript><style>.cursor,.cursor-goo-defs{display:none!important;}</style></noscript>
 </head>
 <body>
+
+<svg class="cursor-goo-defs" width="0" height="0" aria-hidden="true" style="position:absolute;pointer-events:none;">
+  <defs>
+    <filter id="cursor-goo">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur"/>
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -10" result="goo"/>
+      <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+    </filter>
+  </defs>
+</svg>
+
+<div class="cursor" aria-hidden="true">
+  <div class="cursor-ring"></div>
+  <div class="cursor-dot"></div>
+</div>
 
 <header class="site-header">
   <nav class="nav">
@@ -38,7 +54,7 @@
   <article class="article">
 
     <div style="text-align:center; margin: 0 auto 32px; max-width: 600px;">
-      <img src="../../assets/icons/attention-detox.png" alt="アテンションデトックス" style="width:128px; height:128px; border-radius:24px;">
+      <img src="../../assets/icons/attention-detox.png" alt="アテンションデトックス" style="width:156px; height:156px; border-radius:28px; border:1px solid var(--gray-200);">
       <p style="margin-top:16px; font-size:18px; color: var(--gray-300);">
         スマホを「禁止」するアプリじゃない。自分の時間を取り戻すための相棒。
       </p>
@@ -144,5 +160,6 @@
   </div>
 </footer>
 
+<script src="../../assets/main.js" defer></script>
 </body>
 </html>
