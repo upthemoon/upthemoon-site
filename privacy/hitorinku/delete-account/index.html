@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../../../assets/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../assets/apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hitorinku アカウント削除のご案内 | Up the Moon LLC</title>
+<meta name="description" content="Hitorinku (ヒトリンク) のアカウントとデータの削除方法。アプリ内からの削除手順と、メールでの削除依頼方法をご案内します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/style.css">
+<style>
+  /* このページはカスタムカーソル JS (main.js) を読み込まないため、
+     style.css の body{cursor:none} を打ち消して標準カーソルを表示する。 */
+  @media (hover: hover) and (pointer: fine) {
+    body, a, button, [role="button"], input, textarea, select, label { cursor: auto; }
+    a, button, [role="button"], .nav-toggle { cursor: pointer; }
+  }
+</style>
+
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="/" class="brand"><img src="../../../assets/logo_light_128.png" alt="Up the Moon"><span>Up the Moon</span></a>
+    <button class="nav-toggle" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="primary-nav">≡</button>
+    <div class="nav-links" id="primary-nav">
+      <a href="../../../about.html">About</a>
+      <a href="../../../services.html">Services</a>
+      <a href="../../../products.html">Products</a>
+      <a href="../../../company.html">Company</a>
+      <a href="../../../contact.html">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="en">Hitorinku Account Deletion</div>
+  <h1>Hitorinku アカウント削除のご案内</h1>
+</section>
+
+<section class="block">
+  <article class="article">
+    <p>本ページでは、Up the Moon合同会社（以下「当社」）が提供するアプリ「Hitorinku / ヒトリンク」のアカウントおよび関連データの削除方法をご案内します。</p>
+
+    <h2>1. アプリ内から削除する（推奨）</h2>
+    <p>Hitorinku は、アプリ内からいつでもアカウントを完全に削除できます。</p>
+
+    <h3>経営者（管理者）アカウントの場合</h3>
+    <ol>
+      <li>経営者モードでアプリにサインインします。</li>
+      <li>「設定」タブを開き、画面下部までスクロールします。</li>
+      <li>「🗑️ アカウント削除」の「アカウントを削除する」をタップします。</li>
+      <li>確認ダイアログに従って削除を実行します。</li>
+    </ol>
+    <p>サインイン用アカウント（Apple / Google）・クラウド上の全データ（社員・出勤・現場・有給・会社情報）・参加中の社員のアクセス・端末ローカルデータがすべて削除され、復元できません。</p>
+    <p>※ アカウント自体は残してデータだけ消去したい場合は、同じ「設定」タブの「⚠️ 全データを削除」をご利用ください。</p>
+
+    <h3>社員アカウントの場合</h3>
+    <ol>
+      <li>社員モードでアプリを開きます。</li>
+      <li>「設定」タブを開き、画面下部までスクロールします。</li>
+      <li>「🗑️ アカウント削除」をタップします。</li>
+      <li>確認ダイアログに従って削除を実行します。</li>
+    </ol>
+    <p>参加中の会社からの退会・有給申請履歴・サインインアカウント（匿名認証）がすべて削除され、復元できません。</p>
+    <p>※ アカウントは残して会社との紐付けだけ解除したい場合は、同じ画面の「会社から退会」をご利用ください。</p>
+
+    <h2>2. メールで削除を依頼する</h2>
+    <p>アプリをすでにアンインストールした場合や、端末を利用できない場合は、メールで削除をご依頼いただけます。</p>
+    <p>
+      宛先: <a href="mailto:support@upthemoon.co.jp" style="color:var(--gold);">support@upthemoon.co.jp</a><br>
+      件名: 「Hitorinku アカウント削除希望」<br>
+      本文: ご登録内容の確認のため、①経営者 / 社員の別 ②会社名（経営者の場合）または参加していた会社名（社員の場合）③サインインに使用したアカウントの種類（Apple / Google / 招待コード参加）をお知らせください。
+    </p>
+    <p>通常2〜3営業日以内にご返信し、ご本人確認のうえ削除を実施します。</p>
+
+    <h2>3. 削除されるデータと保存期間</h2>
+    <ul>
+      <li><strong>削除されるデータ</strong>: サインインアカウント・出勤データ・人工データ・社員情報・現場情報・有給データ・招待コード・会社情報</li>
+      <li>クラウド（Supabase）上のデータは、削除実行後 90日以内にバックアップを含め完全に削除されます。</li>
+      <li>行動分析データ（PostHog・匿名 UUID）は、アカウントとは紐づかない形で最長2年間保持された後、自動削除されます。</li>
+      <li>お問い合わせ履歴は、受信から3年間保持した後に削除されます。</li>
+    </ul>
+    <p>※ 労働基準法に基づく出勤記録の保存義務（5年間・経過措置中は3年間）は雇用主である採用企業に課されるものです。アカウント削除前に必要な記録を CSV / PDF でエクスポートすることをおすすめします。</p>
+
+    <h2>4. お問い合わせ</h2>
+    <p>
+      Up the Moon合同会社<br>
+      お問い合わせ: <a href="../../../contact.html" style="color:var(--gold);">お問い合わせフォーム</a> / <a href="mailto:support@upthemoon.co.jp" style="color:var(--gold);">support@upthemoon.co.jp</a><br>
+      プライバシーポリシー: <a href="../" style="color:var(--gold);">Hitorinku プライバシーポリシー</a>
+    </p>
+
+    <hr>
+    <p style="text-align: right; color: var(--gray-400); font-size: 13px;">
+      最終更新: 2026年7月4日<br>
+      アプリバージョン: v1.1 以降<br>
+      Up the Moon合同会社
+    </p>
+  </article>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="../../../assets/logo_light_128.png" alt="Up the Moon">
+      <div class="name">Up the Moon LLC</div>
+      <small>Up the Moon合同会社<br>愛知県愛知郡東郷町</small>
+    </div>
+    <div class="footer-links">
+      <div>
+        <h5>Site</h5>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="../../../about.html">About</a></li>
+          <li><a href="../../../products.html">Products</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="../../../privacy.html">プライバシーポリシー (法人)</a></li>
+          <li><a href="/privacy/">アプリ別ポリシー</a></li>
+          <li><a href="../../../tokushoho.html">特定商取引法表記</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <small>© Up the Moon LLC</small>
+  </div>
+</footer>
+
+</body>
+</html>
