@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>PERFECT プロテスト筆記 対策 2026</title>
+<style>
+:root{
+  --board-green:#1E5B3F; --board-red:#B22A35; --ink:#211D1A; --cream:#F3EEE3;
+  --bg:#F3EEE3; --card:#FFFFFF; --text:#211D1A; --muted:#6E6659; --line:#DDD5C4;
+  --accent:#B22A35; --accent-soft:#F7E4E0; --green:#1E5B3F; --green-soft:#E2EEE5;
+  --gold:#A9852F; --gold-soft:#F4ECD6; --warn-bg:#FCF3E4; --warn-line:#E3C98F;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#17211C; --card:#1F2B25; --text:#EDE7D8; --muted:#9BA595; --line:#33413A;
+    --accent:#E06B72; --accent-soft:#43272A; --green:#7FBF9C; --green-soft:#24382E;
+    --gold:#D6B45E; --gold-soft:#38321F; --warn-bg:#332B1B; --warn-line:#6E5B2E; }
+}
+:root[data-theme="dark"]{ --bg:#17211C; --card:#1F2B25; --text:#EDE7D8; --muted:#9BA595; --line:#33413A;
+  --accent:#E06B72; --accent-soft:#43272A; --green:#7FBF9C; --green-soft:#24382E;
+  --gold:#D6B45E; --gold-soft:#38321F; --warn-bg:#332B1B; --warn-line:#6E5B2E; }
+:root[data-theme="light"]{ --bg:#F3EEE3; --card:#FFFFFF; --text:#211D1A; --muted:#6E6659; --line:#DDD5C4;
+  --accent:#B22A35; --accent-soft:#F7E4E0; --green:#1E5B3F; --green-soft:#E2EEE5;
+  --gold:#A9852F; --gold-soft:#F4ECD6; --warn-bg:#FCF3E4; --warn-line:#E3C98F; }
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",system-ui,sans-serif;line-height:1.75;font-size:15px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding:0 16px 90px}
+header.hero{padding:28px 0 18px;border-bottom:3px double var(--line);margin-bottom:14px}
+.hero .kicker{font-size:11px;letter-spacing:.18em;color:var(--accent);font-weight:700}
+.hero h1{margin:.2em 0 .1em;font-size:24px;line-height:1.35;text-wrap:balance}
+.hero .sub{color:var(--muted);font-size:13px}
+.hero .meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.chip{font-size:12px;padding:3px 10px;border-radius:999px;border:1px solid var(--line);background:var(--card)}
+.chip.red{background:var(--accent-soft);border-color:transparent;color:var(--accent);font-weight:700}
+nav.tabs{position:sticky;top:0;z-index:10;background:var(--bg);display:flex;gap:4px;overflow-x:auto;padding:10px 0;border-bottom:1px solid var(--line);margin-bottom:16px;scrollbar-width:none}
+nav.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;border:1px solid var(--line);background:var(--card);color:var(--text);border-radius:999px;padding:7px 14px;font-size:13px;font-weight:600;cursor:pointer}
+.tab.on{background:var(--green);color:#fff;border-color:var(--green)}
+:root[data-theme="dark"] .tab.on, .dark .tab.on{color:#10201A}
+section.pane{display:none}
+section.pane.on{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+h2{font-size:18px;margin:26px 0 10px;padding-left:10px;border-left:4px solid var(--accent);line-height:1.4}
+h3{font-size:15px;margin:20px 0 8px;color:var(--green)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:10px 0}
+.hint{color:var(--muted);font-size:12.5px}
+.kw{color:var(--accent);font-weight:700}
+.num{font-variant-numeric:tabular-nums;font-weight:700;color:var(--green)}
+.trap{background:var(--warn-bg);border:1px solid var(--warn-line);border-radius:10px;padding:12px 14px;margin:10px 0;font-size:14px}
+.trap b:first-child{color:var(--gold)}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+.tablewrap{overflow-x:auto;margin:8px 0}
+th,td{border:1px solid var(--line);padding:6px 9px;text-align:left;vertical-align:top}
+th{background:var(--green-soft);font-size:12.5px}
+td .num{font-weight:700}
+/* flashcards */
+.fc{perspective:900px;cursor:pointer;margin:10px 0;-webkit-tap-highlight-color:transparent}
+.fc-inner{position:relative;transition:transform .4s;transform-style:preserve-3d;min-height:92px}
+.fc.flip .fc-inner{transform:rotateX(180deg)}
+.fc-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;justify-content:center}
+.fc-q{background:var(--card);border:1px solid var(--line)}
+.fc-a{background:var(--green);color:#fff;transform:rotateX(180deg)}
+.fc-a .big{font-size:20px;font-weight:800;font-variant-numeric:tabular-nums}
+.fc-a .note{font-size:12px;opacity:.9}
+.fc-q .cat{font-size:11px;letter-spacing:.1em;color:var(--accent);font-weight:700}
+@media (prefers-reduced-motion: reduce){.fc-inner{transition:none}}
+/* quiz */
+.q{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:13px 15px;margin:10px 0}
+.q .qtext{margin-bottom:8px}
+.blank{display:inline-block;min-width:64px;border-bottom:2px solid var(--accent);color:transparent;text-align:center;user-select:none}
+.q.open .blank{color:var(--accent);font-weight:700;border-bottom-color:transparent;background:var(--accent-soft);border-radius:4px;padding:0 5px}
+.qbtns{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.btn{border:1px solid var(--line);background:var(--bg);color:var(--text);border-radius:8px;padding:5px 14px;font-size:13px;font-weight:600;cursor:pointer}
+.btn:focus-visible,.tab:focus-visible,.fc:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.btn.ok.sel{background:var(--green);color:#fff;border-color:var(--green)}
+.btn.ng.sel{background:var(--accent);color:#fff;border-color:var(--accent)}
+.q .exp{display:none;margin-top:8px;font-size:13px;color:var(--muted);border-top:1px dashed var(--line);padding-top:8px}
+.q.open .exp{display:block}
+.scorebar{position:sticky;top:52px;z-index:5;background:var(--gold-soft);border:1px solid var(--gold);border-radius:10px;padding:8px 14px;font-size:13.5px;margin:10px 0;font-weight:600}
+.choice{display:inline-block;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:1px 8px;margin:2px 3px;font-size:13px}
+.model{background:var(--green-soft);border-radius:10px;padding:14px 16px;margin:10px 0;font-size:14px}
+.model .t{font-weight:700;color:var(--green);margin-bottom:6px}
+.check{list-style:none;padding:0;margin:0}
+.check li{padding:10px 12px;border:1px solid var(--line);border-radius:10px;margin:8px 0;background:var(--card);cursor:pointer;display:flex;gap:10px;align-items:flex-start}
+.check li::before{content:"○";color:var(--muted);font-weight:700;flex:0 0 auto}
+.check li.done{opacity:.55}
+.check li.done::before{content:"●";color:var(--green)}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
+.pill-row{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0}
+.essay-box{border:1.5px solid var(--green);border-radius:10px;padding:14px 16px;margin:10px 0;font-size:14px}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<header class="hero">
+  <div class="kicker">PERFECT PRO TEST — WRITTEN EXAM</div>
+  <h1>プロテスト筆記 直前対策ノート</h1>
+  <div class="sub">2026年度 競技規定テキスト 完全準拠 ｜ 試験日 2026年8月2日(日)</div>
+  <div class="meta">
+    <span class="chip red">合格ライン 70/100点</span>
+    <span class="chip">穴埋め式・穴埋め選択式・作文</span>
+    <span class="chip">出典 = 2026年度プロ試験用 競技規定テキスト</span>
+  </div>
+</header>
+
+<nav class="tabs" role="tablist">
+  <button class="tab on" data-p="p1">📌 要点整理</button>
+  <button class="tab" data-p="p2">🔢 数値カード</button>
+  <button class="tab" data-p="p3">✏️ 穴埋め問題</button>
+  <button class="tab" data-p="p4">📝 記述・作文</button>
+  <button class="tab" data-p="p5">✅ 直前チェック</button>
+</nav>
+
+<!-- ============ P1 要点整理 ============ -->
+<section class="pane on" id="p1">
+
+<div class="card">
+<b>この試験の実態(公式情報+受験者6名以上の体験記より)</b><br>
+・時間: <span class="num">最長90分</span>(途中退出可・公式)。問題数は<span class="num">約50問</span>との証言。<br>
+・出題は競技規定テキストの条文を<span class="kw">(　)で虫食いにした穴埋め</span>が中心(規定問題 約8〜9割+作文 約1〜2割)。<b>引っ掛け・文章改変はなし</b>で、テキストの文章がそのまま出る。<br>
+・回答は<span class="kw">記入式が基本</span>(2025年受験者「選択式では基本ないと思って」)。年度により一部「<span class="kw">10語程度のキーワード群から選ぶ選択式穴埋め</span>」が混在。<b>語句を手書きできる</b>ことが必須。<br>
+・加えて「<span class="kw">40秒ルールについて説明せよ</span>」「<span class="kw">決勝トーナメント出場について説明せよ</span>」のような<b>記述問題</b>、最終問題に<b>作文</b>の出題実績。<br>
+・合格率は全体で<span class="num">55〜62%</span>程度(2017年 54.8%・2018年 61.9%)。複数の合格者が「<b>テキストを丸暗記すれば落ちない」「落とすためでなく受からせるための試験</b>」と証言。恐れず、覚えた分だけ得点になる試験。
+</div>
+
+<h2>Ⅱ-A 用具及び設備 — 数値の巣。最頻出</h2>
+<div class="card">
+・ダーツ = <span class="kw">ティップ・バレル・シャフト・フライト</span>と認識でき(フライトシャフト一体型も可)、<span class="num">1本30cm以内</span> かつ <span class="num">3本で75g以下</span>。ティップは滑らかな<span class="kw">針状のプラスティック製</span>。<br>
+・公認マシン = <span class="kw">フェニックスダーツジャパン株式会社</span>製 <span class="kw">PHOENIX シリーズ</span>。<span class="kw">1−20の時計型</span>。中心の内側=<span class="kw">インナーブル</span>/外側=<span class="kw">アウターブル</span>/内側の狭い枠=<span class="kw">トリプル枠</span>/外側の狭い枠=<span class="kw">ダブル枠</span>。<br>
+・床からブルの中心まで <span class="num">1730mm</span>。<br>
+・"20"の枠は<span class="kw">2色のうち濃い色</span>で<span class="kw">トップセンター</span>。<br>
+・オッキ: 高さ<span class="num">10mm〜100mm以内</span>、ボード中心→オッキ後端の対角線 <span class="num">2990mm</span>(対角線の誤差 <span class="num">±15mm</span>)。<br>
+・認識できないダーツを投げた場合 = <span class="kw">警告1</span>。審判は<span class="kw">試合後</span>コントロールに伝える。
+</div>
+<div class="trap"><b>⚠️ 引っかけ注意</b> — 旧規定(2017頃)ではマシン製造元が「株式会社エイチ・アイ・シー製」だった。<b>2026年テキストは「フェニックスダーツジャパン株式会社製」</b>。古いブログの丸暗記は失点する。±15mm も旧「いずれも」→ 現行は「対角線の長さ」のみ。</div>
+
+<h2>Ⅱ-B 投げ方 / 40秒ルール — 記述でも出る</h2>
+<div class="card">
+・すべて<span class="kw">片手で1本ずつ</span>。一度に<span class="num">3本</span>まで=<span class="kw">1投(ワン・スロー)</span>。2本以下で終了時は3本投げる必要なし。<br>
+・投げる必要のないダーツを投げた=<span class="kw">注意1</span>(1試合中に注意2度で<span class="kw">警告1</span>)。<br>
+・スローイングは対戦相手と<span class="kw">交互</span>。オッキの<span class="kw">後端</span>から。左右に出る場合は<span class="kw">延長線上より後ろ</span>から。<br>
+・<span class="kw">プレーエリアライン</span>(台と台との境界線)は決して越えない。<br>
+・相手が抜き終わり<span class="kw">スローイングラインの後方に戻ってくるまで構えに入らない</span>(注意2度で警告1)。<br>
+・<span class="kw">セットアップの体勢での素振り禁止</span>。セットアップ体勢=<span class="kw">軸足が投げる状態</span>に入っていること(注意2度で警告1)。
+</div>
+<div class="card">
+<b>40秒ルール(全文を順序立てて説明できるように)</b><br>
+① 一方の選手が<span class="kw">審判に申告</span>し、審判が認めた場合に発動(<span class="kw">コントロール責任者及び役員</span>も、著しく遅いと判断した場合に発動できる)。<br>
+② 審判は<span class="kw">コントロールに発動を報告</span>し、<span class="kw">ストップウォッチ</span>を受け取る。<br>
+③ <span class="kw">両選手に発動</span>(申告した選手にも適用)。<br>
+④ 計測 = 一方の選手がダーツを抜いて<span class="kw">スローラインを超えてから</span>、もう一方の選手が<span class="kw">ダーツを抜きスローラインを超えるまで</span>。<br>
+⑤ <span class="num">30秒</span>経過で審判が「<span class="kw">10秒前</span>」と伝える。<br>
+⑥ <span class="num">40秒</span>経過 =「<span class="kw">40秒ファール</span>」→ そのラウンドの<span class="kw">得点・マーク数は無効</span>。<br>
+⑦ やむを得ない中断で40秒超過した場合は適用除外が認められる。<br>
+⑧ <b>アディショナルコール</b>: 40秒ルール適用後、<span class="num">1レグにつき各選手1回だけ</span>使用可。発動したラウンドに限り<span class="kw">40秒の追加時間</span>。使用時は<span class="kw">審判に伝える</span>。審判が認識していない場合は<span class="kw">無効</span>。審判は相手選手へ伝える。
+</div>
+<div class="trap"><b>⚠️ 新規定</b> — 「アディショナルコール」は近年追加の制度。古い過去問情報には存在しないが、新しい部分ほど出題価値が高い。回数(1レグ各1回)・申告先(審判)・認識なしは無効、を確実に。</div>
+
+<h2>Ⅱ-C コイントス — 旧規定から大変更</h2>
+<div class="card">
+・コイントスは<span class="kw">マシンコイントス機能</span>を使用し、<span class="kw">審判</span>が行う。<br>
+・コイントスのみの場合、機能により<span class="kw">選ばれた選手</span>が先攻・後攻を決める権利を持つ。<br>
+・<b>予選ラウンドロビン</b>: 最初のレグ=<span class="kw">コイントスのみ</span>で先攻・後攻決定 / 最終レグ=<span class="kw">コイントスコーク</span>で先攻・後攻<b>及びゲームの選択</b>。<br>
+・<b>決勝トーナメント</b>: 最初のレグ=<span class="kw">コイントスコーク</span> / 最終レグ=<span class="kw">コイントスコーク</span>+ゲーム選択。
+</div>
+<div class="trap"><b>⚠️ 引っかけ注意</b> — 旧規定は「PERFECT公式コイン(なければ100円硬貨)」「表裏の優先権はロビン表の上側/マッチカードの左側」だったが、現行は<b>マシンのコイントス機能</b>。ただしクリケット同点時の再コイントスの優先権「<b>直前のコイントスで優先権を持たなかった選手</b>」は現行も生きている(Ⅱ-G)。</div>
+
+<h2>Ⅱ-D コーク</h2>
+<div class="card">
+・各選手が中心に向かって<span class="num">1本</span>投げ、<span class="kw">ブルの中心(センターホール)に近い方</span>が先攻・後攻及び<span class="kw">ゲームを決める権利</span>を持つ。<br>
+・先に投げた選手のダーツは<span class="kw">抜かない</span>。ただし先の1本が<span class="kw">センターホール</span>に入った場合、後から投げる選手は<span class="kw">抜くことを審判に要求できる</span>。<br>
+・ボードに刺さるまで<span class="kw">続けて投げる</span>。<br>
+・後から投げたダーツで先のダーツが<span class="kw">抜けてしまった</span>場合 → やり直し+<span class="kw">先攻後攻を入れ替える</span>。<br>
+・中心から<span class="kw">全く同じビット数</span> → ダーツは<span class="kw">抜かずに</span>やり直し+入れ替え。<br>
+・決着がついたら審判は<span class="kw">ダーツを抜く前に</span>必ず勝敗を伝える。伝える前に抜いた場合、選手の申告でやり直し+入れ替え。<br>
+・ダーツを抜く時は<span class="kw">自身のダーツのみ</span>抜く。
+</div>
+
+<h2>Ⅱ-E 審判(レフリー)の役割</h2>
+<div class="card">
+・予選RR = <span class="kw">ラウンドロビン表に記載された順番</span> / 決勝T = <span class="kw">前試合の敗者</span>(1回戦目は<span class="kw">コントロール</span>が決定)。<br>
+・敗者は<span class="kw">自身に勝利した選手の次の試合が終了するまで</span>、いつでも審判を行える状態で待機。<br>
+・「P.TOS」表示の開始時刻を過ぎ、選手2名が揃ってから<span class="num">5分</span>経っても審判が来ない → 選手がコントロールへ申し出 → 呼び出し。さらに<span class="num">5分</span>で審判に<span class="kw">警告1</span>。<br>
+・審判を放棄・遅延/不在の正当理由を申し出なかった → <span class="kw">即日15,000円の罰金</span>。<br>
+・マシントラブル時にスコア未記入 → 審判<span class="kw">警告1</span>+<span class="kw">当該レグから再試合</span>。<br>
+・試合中の問題は<span class="kw">選手2名+審判の3名</span>でその場で判断が原則。速やかに中断しコントロールへ。<span class="kw">試合終了後の申し出は原則無効</span>。<br>
+・フィニッシュ方法・<span class="kw">アレンジなどのアドバイス禁止</span>。対戦相手の申告があった場合、審判は<span class="kw">警告</span>。<br>
+・ゲーム終了後は速やかに両者の<span class="kw">スタッツ</span>を記入。アウトボードセンサー不反応時は<span class="kw">正しい本数で計算</span>して記入。
+</div>
+
+<h2>Ⅱ-F 01ゲーム / Ⅱ-G クリケット</h2>
+<div class="card">
+<b>01ゲーム</b><br>
+・ダブル枠=<span class="num">2倍</span> / トリプル枠=<span class="num">3倍</span>。セパレートブル表記<b>なし</b>=アウター・インナー共<span class="num">50点</span> / 表記<b>あり</b>=アウター<span class="num">25点</span>・インナー<span class="num">50点</span>。<br>
+・<span class="kw">マスターアウト(MO)</span>: ダブル枠・トリプル枠・ブル(アウター、インナー)でフィニッシュ。<br>
+・<span class="kw">ダブルアウト(DO)</span>: ダブル枠<b>または</b><span class="kw">インナーブル</span>でフィニッシュ。<br>
+・<span class="kw">バースト</span>=得点が認められず投げる前の点数が残る: ①残り点数<b>以上</b>の得点 ②シングル枠でフィニッシュ ③MO/DO時に残りを<span class="num">1</span>にした場合。<br>
+・01のラウンドは<span class="kw">ノーリミット</span>。
+</div>
+<div class="card">
+<b>クリケット</b><br>
+・<span class="num">15〜20</span>の数字とブルが点数。アウター<span class="num">25点</span>/インナー<span class="num">50点</span>。<br>
+・<span class="num">3本</span>で占有。以降1本につき加算。相手も3本入れたら<span class="kw">双方無効</span>。<br>
+・全箇所占有 or <span class="num">15ラウンド</span>終了時に点数が高い方が勝者。<br>
+・15R以内に全占有で同点 → <span class="kw">先にすべての箇所を占有した方</span>が勝者。<br>
+・15R終了で同点 → <span class="kw">マーク数に関わらず</span>コイントスコーク、<span class="kw">センターホールに近い方</span>が勝者。コインの表裏の優先権=<span class="kw">直前のコイントスで優先権を持たなかった選手</span>。
+</div>
+
+<h2>Ⅱ-I 警告・失格・品行 — 数字が問われる</h2>
+<div class="card">
+・1年間で累積<span class="num">4回</span>警告 → <span class="kw">罰金30,000円</span>。累積<span class="num">8回</span> → その時点で<span class="kw">失格</span>+<span class="kw">1年間の出場資格喪失</span>。<br>
+・警告は受けた日から<span class="num">1年後</span>まで累積(すべて同時に消えるわけではない)。<br>
+・<b>警告対象(8項目)</b>: ①審判の義務を守れない ②試合遅れ・審判遅れ・サイン遅れ等の<span class="kw">遅延行為</span> ③プロとして相応しくない言動・行動 ④<span class="kw">施設使用料分担金</span>の振込期限 ⑤大会<span class="kw">エントリー期限</span> ⑥素振り・構えのタイミングで<span class="kw">1試合中に注意2度</span> ⑦認識できないダーツの使用 ⑧ラウンドロビン表提出時の<span class="kw">誤記載</span>。<br>
+・<b>失格(5項目)</b>: ①累積8回警告で1年出場停止 ②予選の試合をすべて<span class="kw">消化できない</span> ③<span class="kw">相応しくない服装</span>とコントロール責任者が判断 ④<span class="kw">再三の呼び出し</span>に応じない ⑤許可エリア外での<span class="kw">飲酒・喫煙</span>。<br>
+・失格時: 予選中→残りは<span class="kw">不戦敗</span>。不戦勝選手の勝ちレグ・負けレグは<span class="num">2−0</span>。不戦勝の試合は01スタッツアベレージ<span class="kw">算出対象外</span>。決勝T中→その時点で敗退、<span class="kw">ポイントは反映されるが賞金は発生しない</span>。
+</div>
+<div class="trap"><b>⚠️ 引っかけ注意</b> — 不戦勝のレグ数は旧規定「1−0」→ <b>現行「2−0」</b>。罰金額も現行は「30,000円」と明記。</div>
+
+<h2>Ⅱ-J / Ⅲ 大会の骨格</h2>
+<div class="card">
+・予選ラウンドロビン: <span class="kw">最大6名一組・最小5名一組</span>で<span class="kw">全員4試合</span>。勝者が決勝Tへ。<br>
+・決勝トーナメント: <span class="kw">最小8名</span>・<span class="kw">シングルイリミネーション</span>。組み合わせは<span class="kw">抽選</span>。<br>
+・ゲーム・レグ数は<span class="kw">役員が決め、事前に告知</span>。<br>
+・<span class="kw">コントロール責任者は大会に出場できない</span>。<br>
+・エントリー = プロ会員+<span class="kw">施設使用料分担金</span>支払い+<span class="kw">PHOENIX IDおよびカード番号</span>提出。締切後キャンセル=「<span class="kw">大会当日欠席</span>」扱いで返還なし(締切前は返還)。<br>
+・<span class="kw">代理人は許可されない</span> → 発覚で本人・代理人共<span class="kw">失格</span>+<span class="kw">1年以上の出場停止 もしくはプロ資格剥奪</span>。
+</div>
+<div class="card">
+<b>受付・呼出(5分きざみの階段を正確に)</b><br>
+・受付: 公共交通機関の遅延等で<span class="num">3分の1以上</span>の選手が受付できない → <span class="kw">中止・延期・開始時間の変更</span>をPERFECTコントロールが決定。<br>
+・開始<span class="num">5分前</span>にP.TOSで呼び出し通知。<br>
+・開始時刻後、選手1名未着: 審判はその場で<span class="num">5分</span>待機 → コントロールに報告 → <span class="kw">場内呼び出し+警告</span> → さらに<span class="num">5分</span> → <span class="kw">再呼び出し+警告</span> → さらに<span class="num">5分</span> → <span class="kw">失格</span>。<br>
+・審判未着も同様に5分待機→呼出+警告→5分→再呼出+警告→5分→<span class="kw">予選に限り当該試合は無効</span>とし、審判へ警告・出場停止・追放の罰則。<br>
+・場内呼び出しに応じなかった審判が当日中に正当理由を報告しない → <span class="kw">即日15,000円</span>の罰金。
+</div>
+<div class="card">
+<b>試合中のルール</b><br>
+・試合はP.TOS記載の<span class="kw">開始予定時刻を過ぎた時点</span>から進行開始。<br>
+・競技スペース=<span class="kw">テーブルからマシンまで</span>の空間。選手・審判・役員以外と会話 → <span class="kw">アレンジ相談の疑い</span>で警告・出場停止・追放の対象。<br>
+・先攻・後攻を間違えた場合: 間違えられた選手が<span class="kw">1本目を投げた時点でレグ成立</span>。以降は本来の順番。1本目を投げる<b>前</b>に抗議 → <span class="kw">当該レグ無効+再試合</span>。<br>
+・マシン等の設置修正を<span class="kw">選手が行った</span> → 警告1。<br>
+・<b>マシンを離れる</b>: <span class="kw">レグとレグの間のみ</span>+<span class="kw">審判に申告</span>。時間は<span class="num">10分</span>まで(審判が計測)。離れた選手は<span class="kw">次のレグ負け</span>。10分超過で<span class="kw">試合負け</span>。レグ中に離れたら<span class="kw">そのレグも負け</span>。離れている間、相手は<span class="kw">練習スロー可</span>。<br>
+・<b>練習</b>: 試合前に<span class="num">6本(ツー・スロー)</span>。中断時も6本まで。可=<span class="kw">マシン変更時</span>・<span class="kw">40秒ルール等で審判が報告に行く場合</span> / 不可=<span class="kw">アウトボード反応・誤反応の修正</span>・<span class="kw">先攻後攻間違いのマシン操作</span>。
+</div>
+<div class="card">
+<b>得点記録(現行の大原則)</b><br>
+・得点の判定は<span class="kw">刺さり位置を優先</span>して行う。刺さり位置が明確ならそれを正とする。<br>
+・刺さっている位置=ティップが<span class="kw">接触して刺さり、保持されている</span>状態。<br>
+・誤反応は<span class="kw">両選手および審判の協議</span>のもと刺さり位置に基づき修正できる。<br>
+・1投目/2投目の後、<span class="kw">刺さったダーツに触った</span> → それ以降のダーツは無効(明らかな誤反応・無反応で審判が対処する場合を除く)。<br>
+・<b>得点にならない</b>: 反応せず落下 / 他のダーツに当たり刺さらず止まった(ぶら下がり) / スロー後に選手が手で動かした・触った。<br>
+・<b>刺さり位置を優先する例</b>: 刺さっているダーツに別のダーツが当たって別の場所に反応 / 刺さっていないのに反応 / <span class="kw">ティップだけが刺さった</span>場合。<br>
+・相手の得点への抗議は<span class="kw">即座に審判へ</span>。審議終了まで相手は<span class="kw">ダーツを抜いてはならない</span>。抜いた後の抗議は<span class="kw">一切認められない</span>。<br>
+・審判記録は大会当日より<span class="num">2週間</span>保持。スタッツ修正申請はこの期間のみ。
+</div>
+<div class="trap"><b>⚠️ 最重要引っかけ</b> — 旧規定は「マシンの反応を優先」だったが、現行は<b>「刺さり位置を優先」で真逆</b>。古い情報で覚えると確実に失点する。</div>
+
+<h2>Ⅲ-K〜N 予選ラウンドロビン / 決勝T</h2>
+<div class="card">
+・RR表は<span class="kw">試合が行われるマシンに設置</span>。自分の名前を確認して<span class="kw">サイン</span> → 全員のサインが揃ったら記載順に試合 → 終了後、結果を確認しサイン → 全員揃ったら<span class="kw">ロビン内1位の選手</span>がコントロールへ提出。<br>
+・終了サイン前の相互チェック: <span class="kw">1位は3位の結果、2位は1位の結果、3位は2位の結果</span>を確認後サイン。「結果」=<span class="kw">勝ち数・勝ちレグ数と負けレグ数の差・01スタッツアベレージ</span>。<br>
+・開始/終了サイン時に<span class="num">5分</span>来ない選手 → コントロール報告 → 場内呼び出し → <span class="kw">警告1</span>。<br>
+・欠席者修正: 6名ロビンで1名欠席→<span class="kw">5名ロビン化</span> / 5名ロビンで欠席→<span class="kw">不戦敗</span>(不戦勝レグは<span class="num">2−0</span>) / 6名で2名以上→①②の順。<br>
+・<b>決勝T出場順位</b> = <span class="kw">勝ち数 → 勝ちレグ数と負けレグ数の差 → 01スタッツアベレージ</span>。スタッツは<span class="kw">1レグと2レグのみ</span>で算出(3レグ目は対象外)。<span class="kw">小数点第3位以下は切り捨て</span>、第2位まで記載。すべて同じ場合は<span class="kw">大会エントリー順</span>。<br>
+・提出後の誤記入は<span class="kw">変更できない</span>。コントロール判断で全員確認のもと修正する場合、該当選手は<span class="kw">警告1</span>。<br>
+・記入漏れ → <span class="kw">選手及び審判が失格</span>。RR表の改ざん(悪質) → <span class="num">3大会以上</span>の出場停止。<br>
+・マッチカード(決勝T): コントロール作成。審判は<span class="kw">選手本人であることを確認</span>し、練習スロー後<span class="kw">審判のコール</span>で開始。終了後選手が確認・サイン。確認後の間違いが修正不可なら<span class="kw">誤記入が採用</span>される。
+</div>
+
+<h2>Ⅳ〜Ⅶ プロテスト・登録・義務・抹消</h2>
+<div class="card">
+・<b>受験資格</b>: ①PERFECTの<span class="kw">目的</span>を理解し<span class="kw">発展に寄与</span>できる ②ダーツを<span class="kw">スポーツ</span>として捉え<span class="kw">競技規約</span>に従える ③テスト受験日に<span class="kw">満17歳以上</span>(ツアー参加は<span class="kw">満18歳以上</span>・<span class="kw">高校生は参加不可</span>) ④<span class="kw">住民票が日本にある</span>こと(無い場合は<span class="kw">メインスポンサーの推薦</span>が必要。合格時スポンサーが推薦人。賞金受領には<span class="kw">在留資格</span>が必須条件。賞金振込先はスポンサー)。<br>
+・プロテストは<span class="kw">PERFECTの責任</span>で行う(任命した者が行う場合もある)。日時はPERFECTが決定し<span class="kw">公式WEBサイトで事前に発表</span>。受験料は<span class="kw">各期日までに</span>納める。<br>
+・<b>登録</b>: 合格者=<span class="kw">選手名鑑登録</span>に入力 / 2025年資格者=<span class="kw">更新フォーム</span>。<span class="kw">2026年ツアー最終戦エントリー締切日</span>までに年会費または登録費 → 1,3または2,3完了で登録完了。合格者は<span class="kw">本人確認書類</span>提出まで完了しない。<br>
+・<b>義務</b>: イベント要請事項への協力 / 常にプロとして行動し<span class="kw">見本</span>になる。<br>
+・<b>抹消(6項目)</b>: ①<span class="kw">資格返還</span>の申し出を受理 ②毎年最終戦エントリー締切日までに<span class="kw">新規登録・更新未完了</span> ③<span class="kw">名誉を傷付け目的に違反</span> ④相応しくないと判断 ⑤在籍中に<span class="kw">重大な罪</span> ⑥<span class="kw">反社会的団体</span>に所属・関与。
+</div>
+<div class="trap"><b>⚠️ 引っかけ注意</b> — 受験資格は旧「満18歳」→ <b>現行「受験日に満17歳以上」(ツアー参加は満18歳以上・高校生不可)</b>。登録完了条件も旧「住民票を提出」→ 現行「<b>本人確認書類</b>を提出」。</div>
+
+<h2>Ⅷ マナーと安全対策(新章・出題可能性大)</h2>
+<div class="card">
+・試合前後には必ず「<span class="kw">お願いします</span>」「<span class="kw">ありがとうございました</span>」のあいさつ。<br>
+・審判に対しても<span class="kw">敬意</span>を示し、投げやりな態度を取らない。<br>
+・試合中は<span class="kw">過度な接触</span>を控える。<span class="kw">清潔な身だしなみ</span>(過度な香料・体臭・衣服の汚れ→注意・指導)。<br>
+・<b>違反4類型</b>: ①<span class="kw">挑発的な言動</span>(過度なガッツポーズ・勝ち誇った態度・相手のミスを笑う・意図的に音を立てる・視界に入る・試合後に不満を表明) ②<span class="kw">過度に大きな声</span>(他の人の集中を妨げる音量等) ③<span class="kw">不必要な見下しの態度</span> ④<span class="kw">試合の進行を妨げる行動</span>。
+</div>
+
+<h2>Ⅸ ランキング / 定款</h2>
+<div class="card">
+・グレード: <span class="kw">PT300/Extension・PT200・PT100</span>。<br>
+・男子PT300: 優勝<span class="num">300</span>/準優勝<span class="num">225</span>/3位T<span class="num">170</span>/5位T<span class="num">125</span>/9位T<span class="num">90</span>/17位T<span class="num">65</span>/33位T<span class="num">47</span>/65位T<span class="num">34</span>/予選通過<span class="num">25</span>/予選落ち<span class="num">18</span>。<br>
+・女子は<span class="kw">予選通過の区分なし(−)</span>・予選落ち<span class="num">25</span>(PT300)。<br>
+・受賞時に特別な理由なく不在 → 賞金・ポイント取得の権利を<span class="kw">放棄</span>したものとする(年間授賞も同様)。<br>
+・ランキング期間=<span class="kw">開幕戦から最終戦までの1年間</span>。出場大会の<span class="kw">全大会のポイント</span>が対象。ツアー全大会の<span class="num">40%</span>を開催できない年は<span class="kw">ツアー不成立</span>(年間ランキングボーナス発生しない)。<br>
+・定款: 第1条 <span class="kw">一般社団法人PERFECT</span>。第3条 目的=<span class="kw">ソフトダーツの発展</span>。事業=①スポーツとして普及される活動及びその<span class="kw">環境整備</span> ②<span class="kw">社会貢献</span>活動 ③<span class="kw">社会福祉</span>活動 ④プロソフトダーツ組織の確立と<span class="kw">プロ選手の育成</span>活動 ⑤全国ツアーの<span class="kw">企画、開催、運営</span>活動 ⑥附帯又は関連する一切の事業。
+</div>
+<div class="trap"><b>⚠️ 引っかけ注意</b> — 旧規定「上位21大会のポイント」→ 現行は「<b>出場した全大会のポイント</b>」が年間ランキング対象。</div>
+
+</section>
+
+<!-- ============ P2 数値カード ============ -->
+<section class="pane" id="p2">
+<div class="card hint">カードをタップすると答えが出ます。<b>数値を手で書ける</b>ようになるまで回してください。順番はテキストの登場順です。</div>
+<div id="fcList"></div>
+</section>
+
+<!-- ============ P3 穴埋め問題 ============ -->
+<section class="pane" id="p3">
+<div class="scorebar" id="scorebar">スコア: 0 / 0(自己採点)　<button class="btn" id="resetScore" style="margin-left:8px">リセット</button></div>
+<div class="card hint">本番は<b>記入式が主体</b>です。空欄を頭の中で(できれば紙に書いて)答えてから「答えを見る」→ ○×で自己採点。○×は保存されます。<b>★マークは2017年に実際に出題された箇所</b>がベースの問題です。</div>
+<div id="quizList"></div>
+</section>
+
+<!-- ============ P4 記述・作文 ============ -->
+<section class="pane" id="p4">
+
+<h2>記述問題① 「40秒ルールについて説明せよ」(出題実績あり)</h2>
+<div class="model">
+<div class="t">模範解答(現行規定版・約280字)</div>
+一方の選手が審判に申告し、審判が認めた場合に発動する(コントロール責任者及び役員が、プレーが著しく遅いと判断した場合も発動できる)。審判はコントロールに発動を報告し、ストップウォッチを受け取る。ルールは申告した選手を含む両選手に適用される。計測は、一方の選手がダーツを抜いてスローラインを超えてから、もう一方の選手がダーツを抜きスローラインを超えるまでの時間で行い、選手は40秒以内にスローイングを終えなければならない。30秒経過時に審判が「10秒前」と伝え、40秒を経過すると「40秒ファール」となり、そのラウンドの得点・マーク数は無効となる。適用後は1レグにつき各選手1回だけ「アディショナルコール」を使用でき、そのラウンドに限り40秒の追加時間が認められる。
+</div>
+<div class="card hint">書く順番の骨: <b>①発動条件 → ②審判の動き(報告・ストップウォッチ) → ③両選手に適用 → ④計測区間 → ⑤30秒で10秒前 → ⑥40秒ファールと効果 → ⑦アディショナルコール</b>。この7点が入れば満点近い。</div>
+
+<h2>記述問題② 「決勝トーナメント出場(順位決定)について説明せよ」(出題実績あり)</h2>
+<div class="model">
+<div class="t">模範解答(現行規定版・約200字)</div>
+決勝トーナメント出場は、予選ラウンドロビンの「勝ち数」「勝ちレグ数と負けレグ数の差」「01スタッツアベレージ」から算出した順位で決定される。01スタッツアベレージは1レグと2レグのみで算出し、3レグ目は対象外とする。数値は小数点第3位以下を切り捨て、小数点第2位まで記載する。上記の条件がすべて同じ場合は、大会エントリー順で上位を決定する。なお、不戦勝の試合は01スタッツアベレージの算出対象外である。
+</div>
+<div class="trap"><b>⚠️</b> 旧規定は「四捨五入」だったが現行は「<b>切り捨て</b>」。ここを書き間違えると記述の心臓部を落とす。</div>
+
+<h2>作文(最終問題・小論文)</h2>
+<div class="card">
+<b>形式(体験記より)</b>: 当日は<span class="kw">約5テーマから選択</span>(年度により「指定1題+選択1題」)。分量は<b>A4半分〜記入欄4行程度と少なめ</b>。長文力より「短くまとまった内容」が問われる。<br><br>
+<b>過去の出題テーマ実例</b>:
+<div class="pill-row">
+<span class="chip">PERFECTプロになったら何を意識していくか</span>
+<span class="chip">ダーツとマナー</span>
+<span class="chip">PERFECTプロ選手として感じること</span>
+<span class="chip">生涯スポーツとしてのダーツ</span>
+<span class="chip">自分にとっての社会貢献</span>
+<span class="chip">地域におけるダーツ普及促進</span>
+<span class="chip">ダーツのプロの心構えとそれをどう体現するか</span>
+<span class="chip">理想とするダーツプロとは</span>
+<span class="chip">ダーツをしていて最も感動したこと</span>
+</div>
+どのテーマでも下のテンプレ(結論→理由→規定に紐づく具体行動→締め)で書ける。「マナー」「心構え」「普及・貢献」の3系統で1本ずつ短い骨子を用意しておけば全テーマをカバーできる。<br><br>
+💡 <b>実戦アドバイス(合格者談)</b>: 試験当日の<span class="kw">理事長の挨拶・話をよく聞いておく</span>と、小論文にそのまま使える話が聞ける。
+</div>
+<div class="card">
+<b>構成テンプレート(4段構成)</b><br>
+① <b>結論</b> — 意識することを1〜2点、最初に言い切る(例: プロとしての品位ある振る舞いと、ダーツ界の発展への貢献)。<br>
+② <b>理由・自分の背景</b> — なぜそう考えるか。自分のダーツ歴・きっかけを1〜2文。<br>
+③ <b>規定に紐づけた具体行動</b> — ここで採点者に刺さる。<span class="kw">競技規定の言葉を借りる</span>のがコツ:<br>
+　・「試合前後のあいさつ、審判への敬意、相手を尊重するマナー」(Ⅷ マナーと安全対策)<br>
+　・「常にプロとして行動し、見本になる」(Ⅵ 義務)<br>
+　・「ソフトダーツをスポーツとして普及させ、発展に寄与する」(定款・受験資格)<br>
+④ <b>締め</b> — PERFECTの一員として発展に貢献したい、という宣言で閉じる。
+</div>
+<div class="essay-box">
+<b>例文(約420字・そのまま使える骨格)</b><br><br>
+私がPERFECTプロになったら意識していきたいことは二つある。一つはプロとしての品位ある振る舞い、もう一つはソフトダーツの発展に貢献することである。<br><br>
+私はダーツを始めてから、この競技の面白さと奥深さに魅了されてきた。同時に、上位のプロ選手たちの、対戦相手や審判への敬意を欠かさない姿勢に強く憧れてきた。プロとは技術だけでなく、周囲に見本を示す存在だと考えている。<br><br>
+そのため、試合の前後には必ず「お願いします」「ありがとうございました」のあいさつを行い、審判として試合を支える際も、公平で正確な進行に責任を持って取り組みたい。競技規定を正しく理解し遵守することは、対戦相手と大会に関わるすべての人への礼儀だと考える。<br><br>
+また、ソフトダーツをスポーツとして広める活動にも積極的に関わり、ダーツを知らない人にもその魅力を伝えていきたい。PERFECTの一員としての自覚を持ち、常にプロとして行動し、ダーツ界の発展に寄与できる選手になることを誓う。
+</div>
+<div class="card hint">作文の採点は減点法に近いはず。<b>誤字・規定と矛盾する内容・ネガティブ表現</b>(「賞金を稼ぎたい」だけ等)を避け、規定の語彙(発展・寄与・見本・敬意・スポーツ)を散りばめるのが安全です。字数指定があれば8割以上埋める。</div>
+
+<h2>実技試験(公式仕様+体験記)</h2>
+<div class="card" id="jitsugiCard">
+・<b>公式(男子)</b>: <span class="kw">501</span>・<span class="num">8スロー24ダーツ以内</span>・<span class="kw">ダブルアウト</span>・<span class="kw">ブルセパレート</span>(アウター25/インナー50)。<span class="num">5レグ中1レグ</span>クリアで合格。<br>
+・受験料 <span class="num">10,000円</span>(筆記・実技どちらか片方のみの再受験は5,000円)。<br>
+・当日の流れ(体験記): 到着順に番号札 → 順次実技 → 実技後フロントに報告 → 別会場で筆記。<br>
+・<b>合格者の反省点で最多なのが「アレンジ」</b>: 普段マスターアウト・ファットブルの人は<span class="kw">セパレートブル+ダブルアウト</span>に慣れていないと崩れる。40残し(D20)・32残し(D16)以外のパターン、ブルが25点で入った時の計算を事前練習しておく。8/2までの練習は「501をセパブル設定+ダブルアウト縛り」で回すのが最短。
+</div>
+
+</section>
+
+<!-- ============ P5 直前チェック ============ -->
+<section class="pane" id="p5">
+<div class="card hint">試験当日の朝・会場で最終確認する「間違いやすい20項目」。覚えたらタップで消し込み。</div>
+<ul class="check" id="checkList">
+<li>マシンは「フェニックスダーツジャパン株式会社製 PHOENIX シリーズ」(旧: エイチ・アイ・シー ← 書かない!)</li>
+<li>ダーツ規格 = 1本30cm以内・3本で75g以下・ティップは針状のプラスティック製</li>
+<li>ブル中心の高さ 1730mm / オッキ対角線 2990mm(誤差±15mm) / オッキ高さ 10〜100mm</li>
+<li>得点判定は「刺さり位置を優先」(旧: マシン反応優先 ← 真逆なので注意!)</li>
+<li>40秒ルール: 30秒で「10秒前」→ 40秒ファール=そのラウンドの得点・マーク数無効</li>
+<li>アディショナルコール = 1レグにつき各選手1回だけ・審判に申告・審判が認識してなければ無効</li>
+<li>コイントスは「マシンコイントス機能」で審判が行う(旧: 公式コイン/100円硬貨 ← 書かない!)</li>
+<li>予選RR最初のレグ=コイントスのみ / 決勝T最初のレグ=コイントスコーク / 両方とも最終レグ=コイントスコーク+ゲーム選択</li>
+<li>コークで同ビット数 → 抜かずにやり直し+先攻後攻入れ替え</li>
+<li>警告: 累積4回=罰金30,000円 / 累積8回=失格+1年間出場資格喪失 / 警告は1年後まで累積</li>
+<li>不戦勝の勝ちレグ・負けレグは「2−0」(旧: 1−0 ← 書かない!)</li>
+<li>01スタッツは1・2レグのみで算出、小数点第3位以下「切り捨て」(旧: 四捨五入 ← 書かない!)</li>
+<li>決勝T出場順位 = 勝ち数 → 勝ちレグ数と負けレグ数の差 → 01スタッツアベレージ → 全部同じならエントリー順</li>
+<li>呼出の階段: 5分待機 → 呼出+警告 → 5分 → 再呼出+警告 → 5分 → 失格</li>
+<li>審判の罰金 15,000円(即日・正当理由の報告なし) / RR表改ざんは3大会以上の出場停止</li>
+<li>マシンを離れる = レグ間のみ・審判に申告・10分まで・次のレグ負け・10分超過で試合負け</li>
+<li>練習スローは6本(ツー・スロー)。マシン変更時と審判がコントロール報告に行く時は可、誤反応修正時は不可</li>
+<li>受験資格 = 受験日に満17歳以上(ツアー参加は満18歳以上・高校生不可)・住民票が日本</li>
+<li>スタッツ修正申請は大会当日より2週間以内 / 抗議はダーツを抜いた後は一切不可</li>
+<li>DO(ダブルアウト)のフィニッシュは「ダブル枠またはインナーブル」(アウターブル不可!)・MOはダブル/トリプル/ブル両方OK</li>
+</ul>
+<div class="card">
+<b>当日メモ</b><br>
+・持ち物と受験料の納付/受付時間は公式案内を最終確認。<br>
+・筆記は「規定の言葉のまま」書く。自己流の言い換えより条文の語彙(注意1/警告1/失格・コントロール・P.TOS)。<br>
+・作文は最初の3分で骨組み(結論→理由→具体行動→締め)をメモしてから書き始める。
+</div>
+</section>
+
+<footer>
+出典: 一般社団法人PERFECT「2026年度プロ試験用 競技規定テキスト」全15ページ(出題範囲の一次ソース) ＋ PERFECT公式サイト受験案内 ＋ 受験者体験記6件(2017年出題箇所報告[花唐草ブログ]・合格者攻略記事[真なよダーツ]・2025年当日レポ[note]・一発合格記 ほか)。旧規定と現行規定の差分は「⚠️引っかけ注意」に明示 — <b>本番の正解は必ず2026年テキストの文言</b>。最終更新 2026-07-18。
+</footer>
+</div>
+
+<script>
+// ---- tabs ----
+document.querySelectorAll('.tab').forEach(t=>{
+  t.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));
+    document.querySelectorAll('.pane').forEach(x=>x.classList.remove('on'));
+    t.classList.add('on');
+    document.getElementById(t.dataset.p).classList.add('on');
+    window.scrollTo({top:0});
+  });
+});
+
+// ---- flashcards ----
+const cards=[
+["用具","ダーツの長さ制限は?","1本 30cm 以内","3本合計ではなく1本あたり"],
+["用具","ダーツの重さ制限は?","3本で 75g 以下","1本あたりではなく3本合計"],
+["用具","公認マシンの製造元は?","フェニックスダーツジャパン株式会社","PHOENIX シリーズ。旧規定の「エイチ・アイ・シー」は不正解"],
+["用具","床からブルの中心までの高さは?","1730mm",""],
+["用具","ボード中心からオッキ後端までの対角線は?","2990mm","誤差 ±15mm まで"],
+["用具","オッキの高さの範囲は?","10mm 〜 100mm 以内",""],
+["用具","対角線の許容誤差は?","±15mm","現行は「対角線の長さ」についてのみ"],
+["投げ方","1投(ワン・スロー)は何本まで?","3本まで","片手で1本ずつ"],
+["投げ方","投げる必要のないダーツを投げたら?","注意1","1試合中に注意2度で警告1"],
+["40秒","審判が「10秒前」と伝えるのは何秒経過時?","30秒",""],
+["40秒","40秒ファールの効果は?","そのラウンドの得点・マーク数が無効",""],
+["40秒","アディショナルコールは1レグに何回?","各選手 1回だけ","発動ラウンド限り40秒追加。審判に申告必須"],
+["審判","審判の遅延・不在(正当理由の報告なし)の罰金は?","即日 15,000円",""],
+["審判","スタッツ修正申請の期限は?","大会当日より 2週間","審判記録の保持期間と同じ"],
+["01","セパレートブル表記なしのブルは?","アウター・インナー共に 50点","表記ありならアウター25点・インナー50点"],
+["01","ダブルアウト(DO)のフィニッシュ対象は?","ダブル枠 または インナーブル","アウターブルは不可。MOはダブル・トリプル・ブル"],
+["01","バーストになる3条件は?","①残り点数以上 ②シングルでフィニッシュ ③MO/DO時に残り1","投げる前の点数が残る"],
+["クリケット","使う数字は?","15〜20 とブル","アウター25点・インナー50点"],
+["クリケット","占有に必要な本数は?","3本","相手も3本入れたら双方無効"],
+["クリケット","ラウンド数は?","15ラウンド","01はノーリミット"],
+["警告","罰金30,000円になる警告数は?","1年間で累積 4回",""],
+["警告","失格+1年出場資格喪失になる警告数は?","1年間で累積 8回","警告は受けた日から1年後まで累積"],
+["失格","不戦勝の選手に記入するレグ数は?","2−0","旧規定の1−0は不正解。01スタッツ算出対象外"],
+["大会","予選ラウンドロビンの人数は?","最大6名・最小5名(全員4試合)",""],
+["大会","決勝トーナメントの最小人数は?","8名","シングルイリミネーション"],
+["呼出","受付不能で大会中止等を検討する人数基準は?","3分の1以上","公共交通機関の遅延等の特別な事由"],
+["呼出","P.TOS呼び出し通知は開始何分前?","5分前",""],
+["呼出","選手未着→失格までの流れは?","5分待機→呼出+警告→5分→再呼出+警告→5分→失格","5分×3段階"],
+["試合","マシンを離れられる時間は?","10分まで","レグ間のみ・審判に申告・次のレグ負け・超過で試合負け"],
+["試合","試合前の練習スローは?","6本(ツー・スロー)","中断時も6本まで"],
+["予選","01スタッツアベレージの端数処理は?","小数点第3位以下を切り捨て","旧規定の四捨五入は不正解。第2位まで記載"],
+["予選","01スタッツはどのレグで算出?","1レグと2レグのみ","3レグ目は対象外"],
+["予選","RR表をコントロールに提出するのは誰?","ロビン内1位の選手",""],
+["予選","RR表改ざん(悪質)の処分は?","3大会以上の出場停止","記入漏れは選手及び審判が失格"],
+["プロテスト","受験資格の年齢は?","受験日に満17歳以上","ツアー参加は満18歳以上・高校生不可"],
+["登録","会員登録が完了しない条件は?","本人確認書類を提出するまで","旧規定の「住民票提出」は不正解"],
+["ランキング","大会グレード3種は?","PT300/Extension・PT200・PT100",""],
+["ランキング","男子PT300優勝のポイントは?","300","準優勝225・3位タイ170・予選落ち18"],
+["ランキング","ツアー不成立になる開催率は?","全大会の40%を開催できない年","年間ランキングボーナス発生しない"],
+["定款","法人の目的は?","ソフトダーツの発展","第3条。事業6号まで"]
+];
+const fcHost=document.getElementById('fcList');
+cards.forEach(c=>{
+  const d=document.createElement('div');d.className='fc';d.tabIndex=0;
+  d.innerHTML=`<div class="fc-inner"><div class="fc-face fc-q"><div class="cat">${c[0]}</div><div>${c[1]}</div></div><div class="fc-face fc-a"><div class="big">${c[2]}</div>${c[3]?`<div class="note">${c[3]}</div>`:''}</div></div>`;
+  const flip=()=>d.classList.toggle('flip');
+  d.addEventListener('click',flip);
+  d.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();flip();}});
+  fcHost.appendChild(d);
+});
+
+// ---- quiz ----
+// [chapter, question(with 〔〕blanks), answers, star(2017出題), note]
+const qs=[
+["Ⅱ-A 用具","大会で使用するダーツは、ティップ・バレル・シャフト・フライトと認識でき、1本〔　〕以内かつ3本で〔　〕以下のものとする。",["30cm","75g"],1,"ティップは滑らかな針状のプラスティック製"],
+["Ⅱ-A 用具","大会で使用するダーツマシンは〔　〕製ダーツマシン〔　〕シリーズとする。",["フェニックスダーツジャパン株式会社","PHOENIX"],1,"旧規定の「エイチ・アイ・シー」と書かないこと"],
+["Ⅱ-A 用具","水平に置いたとき、床から〔　〕までの高さは〔　〕mmとする。",["ブルの中心","1730"],1,""],
+["Ⅱ-A 用具","オッキの高さは〔　〕mmから〔　〕mm以内とし、ダーツボードの中心からオッキの後端までの対角線の長さは〔　〕mmとする。対角線の長さは誤差〔　〕mmまで認められる。",["10","100","2990","±15"],1,""],
+["Ⅱ-A 用具","“20”の枠は2色のうち〔　〕色で、ボードの〔　〕に位置する。",["濃い","トップセンター"],0,""],
+["Ⅱ-B 投げ方","すべてのダーツは〔　〕で1本ずつ投げる。一度に投げられるダーツは〔　〕本まで、それを1投(〔　〕)とする。",["片手","3","ワン・スロー"],0,""],
+["Ⅱ-B 投げ方","投げる必要のないダーツを投げた場合、〔　〕となる。1試合中に注意を2度受けると〔　〕となる。",["注意1","警告1"],0,""],
+["Ⅱ-B 投げ方","対戦相手がダーツを抜き終わり、〔　〕の後方に戻ってくるまで、構えに入ってはならない。",["スローイングライン"],1,"審判から1試合中に注意2度で警告1"],
+["Ⅱ-B 投げ方","セットアップの体勢で〔　〕を行うことを禁止する。セットアップ体勢とは、〔　〕が投げる状態に入っていることである。",["素振り","軸足"],1,""],
+["Ⅱ-B 40秒","40秒の計測は、一方の選手がダーツを抜いて〔　〕を超えてから、もう一方の選手がダーツを抜き〔　〕を超えるまでの時間とする。",["スローライン","スローライン"],1,""],
+["Ⅱ-B 40秒","審判は〔　〕秒が経過したら、選手に「〔　〕」と伝える。〔　〕秒が経過した場合「40秒ファール」となり、そのラウンドの〔　〕は無効となる。",["30","10秒前","40","得点・マーク数"],1,""],
+["Ⅱ-B 40秒","40秒ルールが適用された後、1レグにつき両選手はそれぞれ〔　〕回だけ「〔　〕」を使用することができる。使用する際は選手が〔　〕にその旨を伝えなければならない。",["1","アディショナルコール","審判"],0,"審判が認識していない場合は無効"],
+["Ⅱ-C コイントス","コイントスは〔　〕機能を使用して行い、〔　〕がコイントスを行う。",["マシンコイントス","審判"],0,"旧規定の「公式コイン/100円硬貨」と書かないこと"],
+["Ⅱ-C コイントス","予選ラウンドロビンでは最初のレグは〔　〕のみによって先攻・後攻を決め、最終レグは〔　〕によって先攻・後攻及び〔　〕を行う。",["コイントス","コイントスコーク","ゲームの選択"],1,"決勝Tは最初のレグからコイントスコーク"],
+["Ⅱ-D コーク","それぞれの選手がボードの中心に向かって1本のダーツを投げ、ブルの中心(〔　〕)に近い方がゲームの先攻・後攻及び〔　〕権利を持つ。これを〔　〕という。",["センターホール","ゲームを決める","コーク"],0,""],
+["Ⅱ-D コーク","コークで後から投げる選手のダーツによって先に投げた選手のダーツが抜けてしまった場合はもう一度やり直す。その場合〔　〕を入れ替える。",["先攻後攻"],1,"同ビット数の場合も抜かずにやり直し+入れ替え"],
+["Ⅱ-D コーク","決着がついたら、審判はダーツを〔　〕前に必ず選手にコークの〔　〕を伝える。ダーツを抜く時は選手が〔　〕のダーツのみを抜く。",["抜く","勝敗","自身"],1,""],
+["Ⅱ-E 審判","決勝トーナメントの審判は〔　〕が行う。1回戦目の審判は〔　〕によって決定する。敗者は自身に勝利した選手の〔　〕が終了するまで待機する義務がある。",["前試合の敗者","コントロール","次の試合"],1,""],
+["Ⅱ-E 審判","審判を放棄した選手も、当日中に遅延や不在の理由を申し出なかった場合も、即日〔　〕円の罰金が発生する。",["15,000"],0,""],
+["Ⅱ-E 審判","マシントラブルが起こった時に審判がスコアの記入をしていない場合、審判は〔　〕とし、〔　〕から再試合とする。",["警告1","当該レグ"],0,""],
+["Ⅱ-E 審判","審判は選手にフィニッシュの方法及び〔　〕など、ゲーム結果に関わる〔　〕をしてはならない。対戦相手の申告があった場合、審判は〔　〕となる。",["アレンジ","アドバイス","警告"],1,""],
+["Ⅱ-F 01","フィニッシュを終了する方法: 〔　〕(MO)はダブル枠・トリプル枠またはブルに、〔　〕(DO)はダブル枠または〔　〕に入れなければならない。",["マスターアウト","ダブルアウト","インナーブル"],0,"DOでアウターブルは不可"],
+["Ⅱ-F 01","バーストが適用されるのは ①選手が残った点数〔　〕の得点を取った場合 ②〔　〕枠でフィニッシュしてしまった場合 ③MO・DOの時に残りの点数を〔　〕にしてしまった場合。",["以上","シングル","1"],0,"01ゲームのラウンドはノーリミット"],
+["Ⅱ-G クリケット","ボード上で〔　〕までの数字とブルが点数となる。アウターブルは〔　〕点、インナーブルは〔　〕点。ひとつの箇所に〔　〕本入れることでその場所を占有できる。",["15〜20","25","50","3"],0,""],
+["Ⅱ-G クリケット","15ラウンド終了時点で同点だった場合は、〔　〕に関わらずコイントスコークを行い〔　〕に近い方が勝者となる。コインの表裏を決める優先権は、直前のコイントスで〔　〕選手にある。",["マーク数","センターホール","優先権を持たなかった"],1,""],
+["Ⅱ-I 警告","1年間で累積〔　〕回警告を受けた選手は罰金〔　〕円の処分となる。1年間で累積〔　〕回警告を受けた者はその時点で失格となり、〔　〕の出場資格を失う。",["4","30,000","8","1年間"],1,"警告は受けた日から1年後まで累積"],
+["Ⅱ-I 失格","失格となる項目: 大会当日、コントロール責任者がプロスポーツ選手として相応しくない〔　〕と判断した場合 / 再三の〔　〕に応じない場合 / 許可されたエリア外で〔　〕を行なった場合。",["服装","呼び出し","飲酒・喫煙"],0,""],
+["Ⅱ-I 失格","予選中に失格となった場合、残りの試合は〔　〕とする。不戦勝の選手に記入する勝ちレグ・負けレグは〔　〕とする。不戦勝の試合は〔　〕の算出対象外とする。",["不戦敗","2-0","01スタッツアベレージ"],1,"旧規定の1-0と書かないこと"],
+["Ⅱ-J 大会","予選ラウンドロビンは最大〔　〕名一組、最小〔　〕名一組とする。決勝トーナメントは最小〔　〕名で行う。",["6","5","8"],0,""],
+["Ⅲ-B 役員","PERFECTにおいて〔　〕は大会に出場できない。くじ引き、試合のスケジュール、〔　〕に責任を持つ。",["コントロール責任者","結果記録"],0,""],
+["Ⅲ-D エントリー","選手登録を完了し、期日までに定められた〔　〕を支払ったうえで〔　〕およびカード番号をPERFECT運営事務局へ提出完了している選手が大会に参加できる。",["施設使用料分担金","PHOENIX ID"],0,""],
+["Ⅲ-D エントリー","いかなる理由があっても出場選手が〔　〕をたてることは許可されない。発覚した場合、本人・〔　〕共に失格となり、〔　〕以上の出場停止処分もしくは〔　〕を剥奪される。",["代理人","代理人","1年","プロ資格"],0,""],
+["Ⅲ-F ユニフォーム","試合に参加する選手が着用するユニフォームは、ユニフォーム規定を厳守したうえで、事前に運営の承認(〔　〕)を得ていることを前提とする。掲載できるスポンサー広告は、当団体と〔　〕を締結し、所定の〔　〕が支払われた企業のみとする。",["ユニフォームチェック","広告契約","広告費"],0,"支払い未確認の広告は覆う・取り外す等で表示を不可視化する義務"],
+["Ⅲ-G 受付","公共交通機関の遅延等の特別な事由により、大会に参加する選手のうち〔　〕以上の選手が時間内に受付を完了できなかった場合、大会の〔　〕をPERFECTコントロールにより決定する。",["3分の1","中止・延期・開始時間の変更"],1,""],
+["Ⅲ-G 呼出","試合開始予定時刻の〔　〕分前には「〔　〕」を通じて選手へ呼び出し通知が送信される。",["5","P.TOS"],0,""],
+["Ⅲ-G 呼出","選手が未到着の場合、審判はその場で〔　〕分間待機→コントロールに報告→場内呼び出しで〔　〕→さらに5分で再呼び出し+警告→二度目の呼び出しからさらに〔　〕分経過で当該選手は〔　〕となる。",["5","警告","5","失格"],1,""],
+["Ⅲ-H 試合","競技スペースとは〔　〕から〔　〕までの空間を指す。試合中に選手、審判、役員以外の者と会話を行った場合、〔　〕に関する相談を行っている疑いがあると見なされることがある。",["テーブル","マシン","アレンジ"],0,""],
+["Ⅲ-H 試合","選手が先攻・後攻の順番を間違えた場合、間違えられた選手が〔　〕を投げた時点でそのレグは成立する。投げる前に審判に抗議した場合、当該レグは〔　〕となり、そのレグから〔　〕とする。",["1本目のダーツ","無効","再試合"],1,""],
+["Ⅲ-H 試合","「マシンを離れる」時間は〔　〕分までとし、〔　〕の審判が責任を持って計測する。マシンを離れた選手は〔　〕は負けとなる。10分経過し戻って来ない場合は〔　〕負けとなる。",["10","その試合","次のレグ","その試合は"],0,"レグ中に離れたらそのレグも負け。相手は練習スロー可"],
+["Ⅲ-I 練習","両選手は試合前に試合が行われるマシンでダーツを〔　〕本(〔　〕)投げてから試合開始となる。",["6","ツー・スロー"],0,"中断時も6本まで"],
+["Ⅲ-J 得点","得点の判定は、ダーツが実際にボードに刺さっている場所(〔　〕)を〔　〕して行う。",["刺さり位置","優先"],0,"旧規定の「マシンの反応を優先」と書かないこと(真逆)"],
+["Ⅲ-J 得点","選手が1投目もしくは2投目のスローを行った後、ボードに刺さったダーツを〔　〕場合、それ以降のダーツは無効となり得点とならない。",["触った"],1,"明らかな誤反応・反応なしで審判が対処する場合は例外"],
+["Ⅲ-J 得点","得点に対しての抗議は〔　〕に審判に申し出ること。ダーツを〔　〕後の抗議は一切認められない。審判が記録した内容は大会当日より〔　〕保持し、スタッツ修正の申請はこの期間に限り受け付ける。",["即座","抜いた","2週間"],1,""],
+["Ⅲ-K 予選","終了のサイン前に1位の選手は〔　〕の結果、2位の選手は〔　〕の結果、3位の選手は〔　〕の結果をそれぞれ確認の後サインをする。全員のサインが揃った後、ロビン内〔　〕の選手がラウンドロビン表をコントロールへ提出する。",["3位","1位","2位","1位"],0,"「結果」=勝ち数・勝ちレグ数と負けレグ数の差・01スタッツアベレージ"],
+["Ⅲ-K 予選","決勝トーナメント出場は、〔　〕、〔　〕、〔　〕から算出した順位で決定される。",["勝ち数","勝ちレグ数と負けレグ数の差","01スタッツアベレージ"],1,"すべて同じ場合は大会エントリー順"],
+["Ⅲ-K 予選","01スタッツアベレージは〔　〕レグと〔　〕レグのみで算出し、3レグ目は対象外とする。小数点第3位以下は〔　〕、小数点第〔　〕位まで記載する。",["1","2","切り捨て","2"],1,"旧規定の「四捨五入」と書かないこと"],
+["Ⅲ-L RR表","ラウンドロビン中の試合に関して記入漏れがあった場合は、選手及び審判が〔　〕となる。予選ラウンドロビン表を改ざんし悪質な場合は、その選手を〔　〕大会以上の〔　〕処分とする。",["失格","3","出場停止"],0,""],
+["Ⅲ-N マッチカード","指定されたマシンに両選手・審判が揃ったら、審判は選手〔　〕であることを確認する。そして〔　〕の後、審判の〔　〕により試合を始める。",["本人","練習スロー","コール"],0,""],
+["Ⅳ プロテスト","受験資格: テスト受験日に満〔　〕歳以上であること。ツアー参加は満〔　〕歳以上とし、〔　〕は参加不可とする。〔　〕が日本にあること。",["17","18","高校生","住民票"],0,"旧規定の「満18歳」と書かないこと(受験は17歳から)"],
+["Ⅳ プロテスト","プロテスト日時は〔　〕が決定し、〔　〕で事前に発表する。プロテスト受験料は別途定める金額を、定められた場所へ〔　〕までに納めなければならない。",["PERFECT","PERFECT公式WEBサイト","各期日"],0,""],
+["Ⅴ 登録","プロテスト合格者は、PERFECT公式WEBサイトの〔　〕登録に必要事項を入力する。〔　〕エントリー締切日までに、PERFECTプロ年会費またはPERFECTプロ登録費を納める。合格者は〔　〕を提出するまで会員登録は完了しない。",["選手名鑑","2026年PERFECTツアー最終戦","本人確認書類"],1,"旧規定の「住民票を提出」と書かないこと"],
+["Ⅵ 義務","プロ登録選手は、PERFECTの管理する〔　〕に対し協力する義務がある。ダーツ界の〔　〕の為に、常に〔　〕として行動をし、〔　〕になるようにする。",["イベント要請事項","発展","プロ","見本"],1,""],
+["Ⅶ 抹消","プロ登録が抹消される項目: 選手本人より〔　〕の申し出がありPERFECTが受理した場合 / 在籍期間中に〔　〕を犯した場合 / 〔　〕に所属している、もしくは関与している場合。",["資格返還","重大な罪","反社会的団体"],1,""],
+["Ⅷ マナー","試合前後には、必ず「〔　〕」「〔　〕」のあいさつを行い、相手選手や関係者に礼節を尽くすこと。〔　〕に対しても敬意を示し、投げやりな態度を取らないように心掛ける。",["お願いします","ありがとうございました","審判"],0,"新章。挑発的な言動・過度に大きな声・見下し・進行妨害の4類型も確認"],
+["Ⅸ ランキング","ポイント数は各大会のグレードによって異なる。種類は〔　〕/Extension、〔　〕、〔　〕である。",["PT300","PT200","PT100"],1,"男子PT300: 優勝300・準優勝225・3位T170・予選落ち18"],
+["Ⅸ ランキング","〔　〕から〔　〕までの1年間をランキングの有効期間とする。ツアー全大会の〔　〕%の大会数を開催できない年に限っては、ツアー〔　〕とする。",["開幕戦","最終戦","40","不成立"],0,"出場大会の全大会ポイントが対象(旧: 上位21大会)"],
+["定款","当法人は〔　〕と称する。当法人は〔　〕の発展を目的とし、事業として ソフトダーツをスポーツとして〔　〕される活動及びその環境整備 / プロソフトダーツ組織の確立と〔　〕の育成活動 などを行う。",["一般社団法人PERFECT","ソフトダーツ","普及","プロ選手"],1,""]
+];
+const qHost=document.getElementById('quizList');
+let store={};
+try{store=JSON.parse(localStorage.getItem('pfq')||'{}')}catch(e){store={}}
+let lastCh='';
+qs.forEach((q,i)=>{
+  if(q[0]!==lastCh){lastCh=q[0];const h=document.createElement('h3');h.textContent=q[0];qHost.appendChild(h);}
+  const d=document.createElement('div');d.className='q';d.dataset.i=i;
+  let n=0;
+  const text=q[1].replace(/〔　〕/g,()=>`<span class="blank">${q[2][n++]||''}</span>`);
+  d.innerHTML=`<div class="qtext">${q[3]?'<span style="color:var(--gold);font-weight:700">★</span> ':''}Q${i+1}. ${text}</div>
+  <div class="qbtns"><button class="btn rev">答えを見る</button><button class="btn ok" aria-label="正解だった">○</button><button class="btn ng" aria-label="不正解だった">×</button></div>
+  ${q[4]?`<div class="exp">💡 ${q[4]}</div>`:''}`;
+  d.querySelector('.rev').addEventListener('click',()=>{d.classList.add('open');d.querySelector('.rev').textContent='表示中';});
+  d.querySelector('.ok').addEventListener('click',()=>{mark(i,'ok',d)});
+  d.querySelector('.ng').addEventListener('click',()=>{mark(i,'ng',d)});
+  if(store[i]){d.classList.add('open');d.querySelector('.'+store[i]).classList.add('sel');}
+  qHost.appendChild(d);
+});
+function mark(i,v,d){
+  store[i]=v;localStorage.setItem('pfq',JSON.stringify(store));
+  d.querySelectorAll('.ok,.ng').forEach(b=>b.classList.remove('sel'));
+  d.querySelector('.'+v).classList.add('sel');
+  updateScore();
+}
+function updateScore(){
+  const vals=Object.values(store);
+  const ok=vals.filter(v=>v==='ok').length;
+  document.getElementById('scorebar').firstChild.textContent=`スコア: ${ok} / ${vals.length}(自己採点・全${qs.length}問)　`;
+}
+document.getElementById('resetScore').addEventListener('click',()=>{
+  store={};localStorage.removeItem('pfq');
+  document.querySelectorAll('.q').forEach(d=>{d.classList.remove('open');d.querySelectorAll('.sel').forEach(b=>b.classList.remove('sel'));d.querySelector('.rev').textContent='答えを見る';});
+  updateScore();
+});
+updateScore();
+
+// ---- checklist ----
+let ck={};
+try{ck=JSON.parse(localStorage.getItem('pfck')||'{}')}catch(e){ck={}}
+document.querySelectorAll('#checkList li').forEach((li,i)=>{
+  if(ck[i])li.classList.add('done');
+  li.addEventListener('click',()=>{li.classList.toggle('done');ck[i]=li.classList.contains('done');localStorage.setItem('pfck',JSON.stringify(ck));});
+});
+</script>
+
+</body>
+</html>
