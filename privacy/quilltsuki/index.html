@@ -7,7 +7,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="../../assets/apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Quilltsuki プライバシーポリシー | Up the Moon LLC</title>
-<meta name="description" content="Quilltsuki (クイルツキ) アプリのプライバシーポリシー。写真と一行日記の取り扱い、PostHog 行動分析、データ保存期間について。">
+<meta name="description" content="Quilltsuki (クイルツキ) アプリのプライバシーポリシー。写真と一行日記の取り扱い、クラウド同期、友達カレンダー、データ保存期間について。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -50,23 +50,23 @@
     <h2>第1条（収集する情報）</h2>
     <p>本アプリは以下の情報を取り扱います。</p>
     <ul>
-      <li><strong>日記コンテンツ</strong>（写真・一行テキスト）— 端末ローカル（AsyncStorage）にのみ保存。当社サーバーには送信されません。</li>
-      <li><strong>端末情報</strong>（iOS バージョン・アプリバージョン・端末モデル）— 行動分析および不具合対応のため。</li>
-      <li><strong>アプリ操作ログ</strong>（画面遷移・機能使用回数・連続記録日数）— 匿名識別子（UUID）と紐づけて行動分析ツールに送信。</li>
+      <li><strong>日記コンテンツ</strong>（写真・一行テキスト）— 端末に保存するとともに、<strong>当社が管理する Supabase（AWS 東京リージョン）へ同期・保存されます</strong>。機種変更時の引き継ぎと、後述の「対面した友達へのカレンダー共有」のために使用します。</li>
+      <li><strong>匿名アカウント識別子</strong>（UUID）— 端末を識別してご自身のデータを紐づけるために、サインイン不要の匿名アカウントを自動発行します。</li>
+      <li><strong>フレンド情報</strong>（フレンドコード・友達関係・すれ違い記録）— 友達カレンダー機能を利用した場合のみ。</li>
       <li><strong>課金状態</strong>（Pro プラン加入有無）— RevenueCat 経由で管理。</li>
       <li><strong>お問い合わせ内容</strong>（任意のメールアドレス・本文）— アプリ内お問い合わせフォーム使用時のみ。</li>
     </ul>
-    <p>本アプリは <strong>ユーザーの氏名・連絡先・住所・電話番号などの個人識別情報は一切取得しません</strong>。サインインも不要です。</p>
+    <p>本アプリは <strong>ユーザーの氏名・住所・電話番号などの個人識別情報は取得しません</strong>。メールアドレスでのサインインも不要で、匿名アカウントのみで動作します。</p>
 
     <h2>第2条（写真・EXIF メタデータの取り扱い）</h2>
     <p>本アプリは写真の <strong>EXIF メタデータ（GPS 位置情報・撮影機種等）を読み取り時に明示的に除去</strong>します。撮影場所が他者に漏れる事故を防ぐためです。</p>
-    <p>写真は端末ローカルに保存され、当社サーバーには送信されません。Share Card（共有カード）機能でユーザーが任意で外部 SNS 等にシェアした場合のみ、当該プラットフォームへ送信されます。</p>
+    <p>写真は端末に保存されるとともに、<strong>当社が管理する Supabase のストレージへ暗号化通信で送信・保存されます</strong>。保存された写真は、原則としてご自身のアカウントからのみ閲覧できます（アクセス制御をサーバー側で強制しています）。例外として、友達カレンダー機能で <strong>Bluetooth により実際に対面した友達に限り、対面から 24 時間のあいだ</strong>、その日記と写真を閲覧できます。Share Card（共有カード）機能でユーザーが任意で外部 SNS 等にシェアした場合は、当該プラットフォームへ送信されます。</p>
+    <p>アプリ内の「すべての記録を消去」を実行すると、端末内のデータに加えて<strong>クラウド上の日記本文・写真も削除</strong>されます。</p>
 
     <h2>第3条（利用目的）</h2>
     <ul>
       <li>本アプリの機能提供（写真と日記の記録・閲覧）</li>
       <li>不具合対応・カスタマーサポート</li>
-      <li>利用状況の分析・サービス改善（リテンション・機能使用率の分析）</li>
       <li>課金状態の管理（Pro プラン課金・解約）</li>
       <li>法令に基づく対応</li>
     </ul>
@@ -82,28 +82,28 @@
     <h2>第5条（外部サービスの利用）</h2>
     <p>本アプリは以下の外部サービスを利用しています。各サービスのプライバシーポリシーも併せてご確認ください。</p>
     <ul>
-      <li><strong>PostHog Inc.</strong>（行動分析・EU リージョン）— 匿名 distinctId（UUID）+ 端末情報 + 操作ログを送信。<a href="https://posthog.com/privacy" target="_blank" rel="noopener" style="color:var(--gold);">PostHog Privacy Policy</a></li>
+      <li><strong>Supabase</strong>（データベース・ストレージ／AWS 東京リージョン）— 日記本文・写真・匿名アカウント識別子・フレンド情報を保存。<a href="https://supabase.com/privacy" target="_blank" rel="noopener" style="color:var(--gold);">Supabase Privacy Policy</a></li>
       <li><strong>RevenueCat, Inc.</strong>（課金管理）— Apple App Store のレシート情報を経由して管理。<a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener" style="color:var(--gold);">RevenueCat Privacy Policy</a></li>
       <li><strong>Apple Inc.</strong>（App Store 配信・課金）— アプリの配信およびアプリ内課金は Apple のシステムを使用します。<a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener" style="color:var(--gold);">Apple Privacy Policy</a></li>
     </ul>
+    <p>本アプリは <strong>広告を配信しておらず、広告目的のトラッキングも行いません</strong>。第三者の広告ネットワークにデータを提供することはありません。</p>
 
-    <h2>第6条（行動分析の opt-out）</h2>
-    <p>本アプリの行動分析機能は、初期設定では <strong>「ON」</strong> となっています。本アプリ「設定」画面の「使用状況の分析を許可する」スイッチで <strong>いつでも OFF にできます</strong>。OFF にすると、それ以降のデータは PostHog に送信されません。</p>
-    <p>分析に使用される識別子は匿名 UUID であり、お客様の氏名・メールアドレス・端末固有 ID（IDFA 等）とは紐づきません。IP アドレスは PostHog 側で匿名化されます。</p>
+    <h2>第6条（友達カレンダー機能について）</h2>
+    <p>友達カレンダー機能を有効にした場合、Bluetooth により <strong>実際に対面した友達に限り</strong>、対面から <strong>24 時間のあいだ</strong>、その期間の日記と写真を閲覧できます。対面していない相手には表示されません。友達関係を解除すると、閲覧できる状態は直ちに終了します。この判定はサーバー側で強制しています。</p>
 
     <h2>第7条（データの保存期間）</h2>
     <ul>
-      <li>日記コンテンツ（端末ローカル）— アンインストールまたは「データ消去」操作まで無期限保存</li>
-      <li>行動分析データ（PostHog）— 2年間（PostHog 側のデフォルト保存期間）</li>
+      <li>日記コンテンツ（端末・クラウド）— アンインストール、または「すべての記録を消去」操作まで無期限保存。消去操作を行うとクラウド上のデータも削除されます</li>
+      <li>フレンド情報・すれ違い記録 — 友達関係の解除まで</li>
       <li>お問い合わせ履歴 — 受信から3年間</li>
     </ul>
 
     <h2>第8条（個人情報の開示・訂正・削除）</h2>
-    <p>本アプリは個人識別情報を取得していませんが、行動分析データ（匿名 UUID）の削除をご希望の場合、または日記コンテンツの全削除をご希望の場合は、お問い合わせ窓口までご連絡ください。本人確認の上、合理的な期間内に対応いたします。</p>
+    <p>日記コンテンツの全削除は、アプリ内「設定」→「すべての記録を消去」でお客様ご自身がいつでも実行できます（クラウド上のデータも削除されます）。そのほか、保存されているデータの開示・訂正・削除をご希望の場合は、お問い合わせ窓口までご連絡ください。本人確認の上、合理的な期間内に対応いたします。</p>
 
     <h2>第9条（GDPR・CCPA への対応）</h2>
     <p>欧州経済領域（EEA）・英国・カリフォルニア州にお住まいのお客様には、GDPR・CCPA に基づく権利（データへのアクセス・訂正・削除・処理の制限・データポータビリティ等）が認められます。これらの権利行使については、お問い合わせ窓口までご連絡ください。</p>
-    <p>本アプリの行動分析データは、PostHog Inc. の EU リージョンサーバー（オランダ・アイルランド）に保存されます。</p>
+    <p>本アプリのデータは Supabase（AWS 東京リージョン）に保存されます。日本国外から利用される場合、データは日本国内のサーバーに保存されます。</p>
 
     <h2>第10条（13歳未満のユーザーについて）</h2>
     <p>本アプリは <strong>13歳未満のお子様による利用を想定していません</strong>。本アプリは App Store のレーティング「4+」ですが、Apple Kids Category には分類されておらず、子供向けに設計・販売されているものではありません。13歳未満のお子様が本アプリを利用していることを当社が認識した場合、当該お子様に関するデータを速やかに削除します。</p>
@@ -120,8 +120,8 @@
 
     <hr>
     <p style="text-align: right; color: var(--gray-400); font-size: 13px;">
-      最終更新: 2026年5月28日<br>
-      アプリバージョン: v1.0 以降<br>
+      最終更新: 2026年8月30日<br>
+      アプリバージョン: v2.0 以降<br>
       Up the Moon合同会社
     </p>
   </article>
