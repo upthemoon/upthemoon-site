@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../../assets/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../assets/apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>マルミエ 共有カレンダーへの参加 | Up the Moon LLC</title>
+<meta name="description" content="マルミエの共有カレンダーへの招待リンクを開くページです。">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/style.css">
+<noscript><style>.cursor,.cursor-goo-defs{display:none!important;}</style></noscript>
+</head>
+<body>
+
+<svg class="cursor-goo-defs" width="0" height="0" aria-hidden="true" style="position:absolute;pointer-events:none;">
+  <defs>
+    <filter id="cursor-goo">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur"/>
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -10" result="goo"/>
+      <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+    </filter>
+  </defs>
+</svg>
+
+<div class="cursor" aria-hidden="true">
+  <div class="cursor-ring"></div>
+  <div class="cursor-dot"></div>
+</div>
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="/" class="brand"><img src="../../assets/logo_light_128.png" alt="Up the Moon"><span>Up the Moon</span></a>
+    <button class="nav-toggle" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="primary-nav">≡</button>
+    <div class="nav-links" id="primary-nav">
+      <a href="../../about.html">About</a>
+      <a href="../../services.html">Services</a>
+      <a href="../../products.html">Products</a>
+      <a href="../../company.html">Company</a>
+      <a href="../../contact.html">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="en">Marumie</div>
+  <h1>共有カレンダーへの参加</h1>
+</section>
+
+<section class="block">
+  <article class="article" style="max-width:600px; margin:0 auto; text-align:center;">
+    <img src="../../assets/icons/marumie.png" alt="マルミエ" style="width:120px; height:120px; border-radius:26px; border:1px solid var(--gray-200); display:block; margin:0 auto 24px;">
+
+    <div id="join-ok" hidden>
+      <p style="font-size:18px;">マルミエの共有カレンダーに招待されています。</p>
+      <p><a id="join-open" class="cta-link" href="#" style="font-size:20px; font-weight:600;">マルミエで開いて参加する →</a></p>
+      <p style="color:var(--gray-300);">参加すると、招待した人が選んだ範囲で予定が見えるようになります。</p>
+
+      <h2 style="font-size:18px; margin-top:40px;">マルミエをまだ入れていないとき</h2>
+      <p>先にアプリを入れて、ログインしてから、もう一度このページの「マルミエで開いて参加する」を押してください。</p>
+      <p>
+        <a class="cta-link" href="https://apps.apple.com/jp/app/id6801735842" target="_blank" rel="noopener">App Store でダウンロード →</a><br>
+        <a class="cta-link" href="https://play.google.com/store/apps/details?id=com.upthemoon.marumie" target="_blank" rel="noopener">Google Play でダウンロード →</a>
+      </p>
+
+      <h2 style="font-size:18px; margin-top:40px;">アプリが開かないとき</h2>
+      <p>このページのアドレスをコピーして、マルミエの「共有・通知」→「招待を入力」に貼り付けてください。</p>
+      <p><button id="join-copy" type="button" class="cta-link" style="font:inherit; font-weight:600; background:none; border:1px solid currentColor; border-radius:999px; padding:8px 20px; cursor:pointer;">アドレスをコピー</button></p>
+      <p id="join-copied" role="status" style="color:var(--gray-300);"></p>
+      <p style="color:var(--gray-300); font-size:14px;">招待のリンクには期限があります。期限が切れていたら、招待した人に新しいリンクを送ってもらってください。</p>
+    </div>
+
+    <div id="join-bad">
+      <p style="font-size:18px;">招待のリンクを読み取れませんでした。</p>
+      <p>届いたリンクを途中で切らずに、最後まで開いてください。うまくいかないときは、招待した人にもう一度送ってもらってください。</p>
+      <p><a class="cta-link" href="../../products/marumie/">マルミエについて →</a></p>
+    </div>
+  </article>
+</section>
+
+<script>
+(function () {
+  // トークンはフラグメント (#t=) にあるので、サーバーには送られない。
+  var m = /^#t=([0-9a-fA-F]{64})$/.exec(location.hash);
+  if (!m) return;
+  var token = m[1].toLowerCase();
+  document.getElementById('join-bad').hidden = true;
+  document.getElementById('join-ok').hidden = false;
+  document.getElementById('join-open').href = 'com.upthemoon.marumie://join?invite=' + token;
+  document.getElementById('join-copy').addEventListener('click', function () {
+    var done = function () { document.getElementById('join-copied').textContent = 'コピーしました'; };
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(location.href).then(done, function () {
+        document.getElementById('join-copied').textContent = 'コピーできませんでした。アドレス欄から長押しでコピーしてください';
+      });
+    }
+  });
+})();
+</script>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="../../assets/logo_light_128.png" alt="Up the Moon">
+      <div class="name">Up the Moon LLC</div>
+      <small>Up the Moon合同会社<br>愛知県愛知郡東郷町</small>
+    </div>
+    <div class="footer-links">
+      <div>
+        <h5>Site</h5>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="../../about.html">About</a></li>
+          <li><a href="../../products.html">Products</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="../../privacy.html">プライバシーポリシー (法人)</a></li>
+          <li><a href="../../privacy/marumie/">マルミエ プライバシーポリシー</a></li>
+          <li><a href="../../terms/marumie/">マルミエ 利用規約</a></li>
+          <li><a href="../../tokushoho.html">特定商取引法表記</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <small>© Up the Moon LLC</small>
+  </div>
+</footer>
+
+<script src="../../assets/main.js" defer></script>
+</body>
+</html>
