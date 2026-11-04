@@ -94,10 +94,13 @@
   document.getElementById('join-open').href = 'com.upthemoon.marumie://join?invite=' + token;
   document.getElementById('join-copy').addEventListener('click', function () {
     var done = function () { document.getElementById('join-copied').textContent = 'コピーしました'; };
+    var failed = function () {
+      document.getElementById('join-copied').textContent = 'コピーできませんでした。アドレス欄から長押しでコピーしてください';
+    };
     if (navigator.clipboard) {
-      navigator.clipboard.writeText(location.href).then(done, function () {
-        document.getElementById('join-copied').textContent = 'コピーできませんでした。アドレス欄から長押しでコピーしてください';
-      });
+      navigator.clipboard.writeText(location.href).then(done, failed);
+    } else {
+      failed();
     }
   });
 })();
